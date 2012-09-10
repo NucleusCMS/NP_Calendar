@@ -4,8 +4,10 @@
   * This plugin can be used to insert a calendar on your page
   *
   * History:
-  *   v0.87: synchronization of item date (by yama)
-  *   v0.861: multi language (by yama)
+  *   v0.88: added holiday (by yama http://kyms.ne.jp)
+  *        : modify no link to doesn't exist prev month (by yama http://kyms.ne.jp)
+  *   v0.87: synchronization of item date (by yama http://kyms.ne.jp)
+  *   v0.861: multi language (by yama http://kyms.ne.jp)
   *   v0.86: for japanese (by mimie)
   *   v0.85: added year validation for "today" td (by rayrizzo)
   *   v0.84: add delim between prev/next month (by cs42)
@@ -53,7 +55,7 @@ class NP_Calendar extends NucleusPlugin {
   function getName() { return 'Calendar Plugin'; }
   function getAuthor() { return 'karma / roel / jhoover / admun / hcgtv / mimie / yama | others'; }
   function getURL() { return 'http://nucleuscms.org/'; }
-  function getVersion() { return '0.87'; }
+  function getVersion() { return '0.88'; }
   function getDescription() {
     return 'This plugin can be called from within skins to insert a calender on your site, by using &lt;%Calendar%&gt;.';
   }
@@ -113,12 +115,26 @@ class NP_Calendar extends NucleusPlugin {
   function doSkinVar($skinType, $view = 'all', $blogName = '') {
     global $manager, $blog, $CONF, $archive, $itemid;
 
+
     /*
      * find out which blog to use:
      * 1. try the blog chosen in skinvar parameter
      * 2. try to use the currently selected blog
      * 3. use the default blog
      */
+
+
+      if (file_exists($this->getDirectory()."libs/japaneseDate/japaneseDate.php"))
+         {
+         require_once($this->getDirectory() . "libs/japaneseDate/japaneseDate.php");
+         $useextlib = true;
+         }
+      else 
+      {
+         $useextlib = false;
+      }
+
+
     if ($blogName) {
       $b =& $manager->getBlog(getBlogIDFromName($blogName));
     } else if ($blog) {
@@ -152,13 +168,13 @@ class NP_Calendar extends NucleusPlugin {
      */
     $category = ($view == 'limited') ? $blog->getSelectedCategory() : 0;
 
-    $this->_drawCalendar($time, $b, $this->getOption('LinkAll'), $category);
+    $this->_drawCalendar($time, $b, $this->getOption('LinkAll'), $category, $useextlib);
   }
 
    /**
     * This function draws the actual calendar as a table
     */
-  function _drawCalendar($timestamp, &$blog, $linkall, $category) {
+  function _drawCalendar($timestamp, &$blog, $linkall, $category, $useextlib) {
     $blogid = $blog->getID();
 
     // set correct locale
@@ -208,9 +224,9 @@ class NP_Calendar extends NucleusPlugin {
       $days = array();
       $timeNow = $blog->getCorrectTime();
       if ($category != 0) {
-        $res = sql_query('SELECT DAYOFMONTH(itime) as day FROM '.sql_table('item').' WHERE icat='.$category.' and MONTH(itime)='.$month.' and YEAR(itime)='.$year .' and iblog=' . $blogid . ' and idraft=0 and UNIX_TIMESTAMP(itime)<'.$timeNow.' GROUP BY day');
+        $res = sql_query('SELECT DAYOFMONTH(itime) as day FROM '.sql_table('item').' WHERE icat='.$category.' and MONTH(itime)='.$month.' and YEAR(itime)='.$year .' and iblog=' . intval($blogid) . ' and idraft=0 and UNIX_TIMESTAMP(itime)<'.$timeNow.' GROUP BY day');
       } else {
-        $res = sql_query('SELECT DAYOFMONTH(itime) as day FROM '.sql_table('item').' WHERE MONTH(itime)='.$month.' and YEAR(itime)='.$year .' and iblog=' . $blogid . ' and idraft=0 and UNIX_TIMESTAMP(itime)<'.$timeNow.' GROUP BY day');
+        $res = sql_query('SELECT DAYOFMONTH(itime) as day FROM '.sql_table('item').' WHERE MONTH(itime)='.$month.' and YEAR(itime)='.$year .' and iblog=' . intval($blogid) . ' and idraft=0 and UNIX_TIMESTAMP(itime)<'.$timeNow.' GROUP BY day');
       }
 
       while ($o = mysql_fetch_object($res)) {
@@ -234,6 +250,17 @@ class NP_Calendar extends NucleusPlugin {
     }
       }
 
+    $oldestdate = explode("-",quickquery('SELECT SUBSTR(itime,1,7) as result FROM ' .sql_table('item'). ' WHERE iblog= ' . intval($blogid) . ' AND idraft=0 ORDER BY itime ASC LIMIT 1'));
+    if ($last_month < $oldestdate[1] && $year == $oldestdate[0]) {
+      $past = false;
+    } else {
+				if ($last_month > $oldestdate[1] && $last_year < $oldestdate[0]) { 
+				$past = false; 
+           } else { 
+      $past = true;
+    }
+      }
+
     if ($nolink == "yes") {
     ?> <!-- calendar start -->
       <table class="calendar" summary="<?php echo htmlspecialchars($this->getOption('Summary'))?>">
@@ -246,7 +273,16 @@ class NP_Calendar extends NucleusPlugin {
     ?> <!-- calendar start -->
       <table class="calendar" summary="<?php echo htmlspecialchars($this->getOption('Summary'))?>">
       <caption>
+    <?php
+      if ($past) {
+    ?>
       <a href="<?php echo createArchiveLink($blogid,$last_year.'-'.$last_month)?>"><?php echo $prev; ?></a>
+    <?php
+      } else {
+      // No link to past
+      echo $prev;
+      }
+    ?>
       <?php echo $delim; ?>
       <a href="<?php echo createArchiveLink($blogid, strftime('%Y-%m',$timestamp))?>"><?php echo strftime($time_format,$timestamp)?></a>
       <?php echo $delim; ?>
@@ -313,6 +349,13 @@ class NP_Calendar extends NucleusPlugin {
         echo '<td class="blank">&nbsp;</td>';
       }
     }
+    if ($useextlib) {
+        $jd =& new japaneseDate();
+        $holiday = array_keys($jd->getHolidayList($timestamp));
+        }
+    else {
+        $holiday = array(0);
+        }
 
     $mday = 1;
     $to_day = date("j", $blog->getCorrectTime());
@@ -321,6 +364,8 @@ class NP_Calendar extends NucleusPlugin {
     while (checkdate($month, $mday, $year)) {
       if ($mday == $to_day && $this_month == $month && $this_year == $year) {
         echo '<td class="today">';
+      } elseif(in_array($mday, $holiday)) {
+			echo '<td class="holiday">';
       } elseif($wday == 1) {
 			echo '<td class="sunday">';
       } elseif($wday == 7) {
@@ -350,6 +395,7 @@ class NP_Calendar extends NucleusPlugin {
     // footer
     echo '</table>';
     echo "\n<!-- calendar end -->\n";
+
   }
 }
 ?>
