@@ -1,0 +1,37 @@
+This plugin can be used to insert a calendar on your page
+
+History:
+  v0.88: added holiday (by yama http://kyms.ne.jp)
+       : modify no link to doesn't exist prev month (by yama http://kyms.ne.jp)
+  v0.87: synchronization of item date (by yama http://kyms.ne.jp)
+  v0.861: multi language (by yama http://kyms.ne.jp)
+  v0.86: for japanese (by mimie)
+  v0.85: added year validation for "today" td (by rayrizzo)
+  v0.84: add delim between prev/next month (by cs42)
+  v0.83: no link to future month
+  v0.82: fixed blogname parameter bug reported by Pieter
+  v0.81b: fixed bug reported by Pieter
+  v0.81a: typo
+  v0.81: included hcgtv's improvement
+  v0.80: fixed today highlight bug
+  v0.79a: disabled prev/next month link if SC mode is enabled
+  v0.79: fixed typo
+  v0.78a: merged gRegor's category change
+  v0.78: added straight calendar mode (no links)
+  v0.77: added option to change prev/next month link label
+         added option to change day label
+         added option to start week on Sun (integrated changes from Hop)
+  v0.76: use sql_table, add supportsFeature, add today highlight, merged w/ XE
+  v0.75: short_open_tags: <? -> <?php (karma)
+  v0.73: jhoover fixed the bug that appeared in the monthly archives
+     (showing December 1999 everywhere) when using Fancy URL's
+  v0.72: links to previous/next month added (by Roel)
+     Fixed: "Passing locale category name as string is deprecated" by removing two quotes ;-)
+  v0.71: last table cell was missing
+  v0.7: dates with future/draft posts are no longer linked
+  v0.6: using options now instead of instance variables to keep options
+  v0.51: fixed: calender was not limited to blog
+  v0.5: - moved table summary to constructor
+        - date headers now created according to locale
+  v0.21: added doTemplateVar
+  v0.2: initial plugin

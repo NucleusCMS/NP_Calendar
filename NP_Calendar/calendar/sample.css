@@ -1,0 +1,30 @@
+table.calendar
+       {background-color:#fff;border-collapse: collapse;font-family:sans-serif;border:1px solid #ddd;}
+table.calendar caption
+       {color:#aaa;letter-spacing:2px;padding:4px;}
+table.calendar th, table.calendar td
+       {border:1px solid #ddd;padding:0;margin:0;}
+table.calendar th, table.calendar td div
+       {padding:2px 4px;}
+table.calendar th
+       {text-align:center;}
+table.calendar td
+       {text-align:right;color:#999;letter-spacing:1px;}
+table.calendar tr.calendardateheaders
+       {background-color:#ccc;color:#fff;}
+table.calendar td.blank
+       {background-color:#f5f5f5;}
+table.calendar td.saturday
+       {background-color:#f7f9fd;}
+table.calendar td.sunday
+       {background-color:#fff3ee;}
+table.calendar td.holiday
+       {background-color:#fff3ee;}
+table.calendar td.today
+       {background-color:#ffffcc;}
+table.calendar td.special
+       {background-color:#f1fcf2;}
+table.calendar td a:link, table.calendar td a:visited
+       {font-weight:bold;display:block;margin:0;padding:2px 4px;text-decoration:underline;}
+
+table.calendar a:link,table.calendar a:visited {background:none;padding:0;}
