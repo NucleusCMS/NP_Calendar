@@ -1,0 +1,27 @@
+<?php 
+define('NP_CALENDAR_LOCALE_LABEL',	'Language (locale) to use');
+define('NP_CALENDAR_LOCALE_VALUE',	'english');
+define('NP_CALENDAR_TIME_FORMAT_LABEL','format month, year');
+define('NP_CALENDAR_TIME_FORMAT_VALUE','%B %Y');
+define('NP_CALENDAR_LINKALL_LABEL',	'Create links for all days (even those that do not have posts?)');
+define('NP_CALENDAR_JUSTCAL_LABEL',	'Display a calendar with no link? (override create links for all days above)');
+define('NP_CALENDAR_SUMMARY_LABEL',	'Summary text for the calendar table');
+define('NP_CALENDAR_SUMMARY_VALUE',	'Monthly calendar with links to each day\'s posts');
+define('NP_CALENDAR_PREVM_LABEL',	'Label for previous month');
+define('NP_CALENDAR_NEXTM_LABEL',	'Label for next month','text');
+define('NP_CALENDAR_DELIM_LABEL',	'Delimiter between label for previous/next and current month');
+define('NP_CALENDAR_MON_LABEL',		'Label for Monday');
+define('NP_CALENDAR_MON_VALUE',		'Mon');
+define('NP_CALENDAR_TUE_LABEL',		'Label for Tuesday');
+define('NP_CALENDAR_TUE_VALUE',		'Tue');
+define('NP_CALENDAR_WED_LABEL',		'Label for Wednesday');
+define('NP_CALENDAR_WED_VALUE',		'Wed');
+define('NP_CALENDAR_THU_LABEL',		'Label for Thursday');
+define('NP_CALENDAR_THU_VALUE',		'Thu');
+define('NP_CALENDAR_FRI_LABEL',		'Label for Friday');
+define('NP_CALENDAR_FRI_VALUE',		'Fri');
+define('NP_CALENDAR_SAT_LABEL',		'Label for Saturday');
+define('NP_CALENDAR_SAT_VALUE',		'Sat');
+define('NP_CALENDAR_SUN_LABEL',		'Label for Sunday');
+define('NP_CALENDAR_SUN_VALUE',		'Sun');
+define('NP_CALENDAR_STARTSUN_LABEL','Should week start in Sunday?');

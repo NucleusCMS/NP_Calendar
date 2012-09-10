@@ -1,0 +1,27 @@
+<?php 
+define('NP_CALENDAR_LOCALE_LABEL',	'使用する言語');
+define('NP_CALENDAR_LOCALE_VALUE',	'japanese');
+define('NP_CALENDAR_TIME_FORMAT_LABEL','年月表記の形式');
+define('NP_CALENDAR_TIME_FORMAT_VALUE','%Y-%m');
+define('NP_CALENDAR_LINKALL_LABEL',	'全ての日にリンクを作成する(アイテムの有無に関わらず)');
+define('NP_CALENDAR_JUSTCAL_LABEL',	'カレンダーでリンクは使用しない(上記項目を上書きします)');
+define('NP_CALENDAR_SUMMARY_LABEL',	'カレンダーのtableタグのサマリ');
+define('NP_CALENDAR_SUMMARY_VALUE',	'カレンダー');
+define('NP_CALENDAR_PREVM_LABEL',	'先月のラベル');
+define('NP_CALENDAR_NEXTM_LABEL',	'翌月のラベル');
+define('NP_CALENDAR_DELIM_LABEL',	'先月/翌月と当月のデリミタ');
+define('NP_CALENDAR_MON_LABEL',		'月曜日のラベル');
+define('NP_CALENDAR_MON_VALUE',		'月');
+define('NP_CALENDAR_TUE_LABEL',		'火曜日のラベル');
+define('NP_CALENDAR_TUE_VALUE',		'火');
+define('NP_CALENDAR_WED_LABEL',		'水曜日のラベル');
+define('NP_CALENDAR_WED_VALUE',		'水');
+define('NP_CALENDAR_THU_LABEL',		'木曜日のラベル');
+define('NP_CALENDAR_THU_VALUE',		'木');
+define('NP_CALENDAR_FRI_LABEL',		'金曜日のラベル');
+define('NP_CALENDAR_FRI_VALUE',		'金');
+define('NP_CALENDAR_SAT_LABEL',		'土曜日のラベル');
+define('NP_CALENDAR_SAT_VALUE',		'土');
+define('NP_CALENDAR_SUN_LABEL',		'日曜日のラベル');
+define('NP_CALENDAR_SUN_VALUE',		'日');
+define('NP_CALENDAR_STARTSUN_LABEL','日曜日を週の最初にしますか？');
