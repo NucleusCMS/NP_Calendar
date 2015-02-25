@@ -209,7 +209,7 @@ class NP_Calendar extends NucleusPlugin
 		if ($nolink == "yes")
 		{
 			$str = "<!-- calendar start -->\n";
-			$str .= '<table class="calendar" summary="' . htmlspecialchars($this->getOption('Summary')) . '">';
+			$str .= '<table class="calendar" summary="' . $this->hsc($this->getOption('Summary')) . '">';
 			$str .= "<caption>\n";
 			$str .= strftime($time_format,$timestamp);
 			$str .= "</caption>\n";
@@ -218,7 +218,7 @@ class NP_Calendar extends NucleusPlugin
 		else
 		{
 			$str = "<!-- calendar start -->\n";
-			$str .= '<table class="calendar" summary="' . htmlspecialchars($this->getOption('Summary')) . '">';
+			$str .= '<table class="calendar" summary="' . $this->hsc($this->getOption('Summary')) . '">';
 			$str .= "<caption>\n";
 			if ($past)
 			{
@@ -364,5 +364,10 @@ class NP_Calendar extends NucleusPlugin
 			}
 		}
 		return $result;
+	}
+	
+	function hsc($str) {
+		if(function_exists('hsc')) return hsc($str);
+		else                       return htmlspecialchars($str);
 	}
 }
