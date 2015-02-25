@@ -6,7 +6,16 @@ class NP_Calendar extends NucleusPlugin
 	function getAuthor()         { return 'karma / roel / jhoover / admun / hcgtv / mimie / yama | others'; }
 	function getURL()            { return 'http://nucleuscms.org/'; }
 	function getVersion()        { return '0.89'; }
-	function supportsFeature($w) { return ($w === 'SqlTablePrefix') ? 1 : 0; }
+	function getMinNucleusVersion() { return 350; }
+	function supportsFeature($what) {
+		switch($what){
+			case 'SqlTablePrefix':
+			case 'SqlApi':
+			return 1;
+			default:
+			return 0;
+		}
+	}
 	function getDescription()    { return NP_CALENDAR_DESC;}
 	function getEventList()      { return array('PreSkinParse'); }
 	function install()
@@ -168,7 +177,7 @@ class NP_Calendar extends NucleusPlugin
 				$res = sql_query("SELECT DAYOFMONTH(itime) as day FROM {$tbl_item} WHERE MONTH(itime)={$month} and YEAR(itime)={$year } and iblog={$blogid} and idraft=0 and UNIX_TIMESTAMP(itime)<{$timeNow} GROUP BY day");
 			}
 	
-			while ($o = mysql_fetch_object($res))
+			while ($o = sql_fetch_object($res))
 			{
 				$days[$o->day] = 1;
 			}
