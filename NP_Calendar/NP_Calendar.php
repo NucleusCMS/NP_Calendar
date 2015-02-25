@@ -5,7 +5,7 @@ class NP_Calendar extends NucleusPlugin
 	function getName()           { return 'Calendar Plugin'; }
 	function getAuthor()         { return 'karma / roel / jhoover / admun / hcgtv / mimie / yama | others'; }
 	function getURL()            { return 'http://nucleuscms.org/'; }
-	function getVersion()        { return '0.89'; }
+	function getVersion()        { return '1.00'; }
 	function getMinNucleusVersion() { return 350; }
 	function supportsFeature($what) {
 		switch($what){
