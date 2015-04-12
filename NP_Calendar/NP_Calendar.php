@@ -313,8 +313,8 @@ class NP_Calendar extends NucleusPlugin
 				     && $this_month == $month
 				     && $this_year == $year)      $class = 'today';
 				elseif(in_array($mday, $holiday)) $class = 'holiday';
-				elseif(($startsun == 'yes' && $wday == 1) || ($$startsun != 'yes' && $wday == 7))                $class = 'sunday';
-				elseif(($startsun == 'yes' && $wday == 7) || ($$startsun != 'yes' && $wday == 6))                $class = 'saturday';
+				elseif(($startsun == 'yes' && $wday == 1) || ($startsun != 'yes' && $wday == 7))                $class = 'sunday';
+				elseif(($startsun == 'yes' && $wday == 7) || ($startsun != 'yes' && $wday == 6))                $class = 'saturday';
 				else                              $class = 'days';
 				$str .= '<td class="' . $class . '">';
 				
