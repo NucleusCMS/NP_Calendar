@@ -141,12 +141,12 @@ class japaneseDate
 	 *
 	 * @return void
 	*/
-	function japaneseDate()
+	function __construct()
 	{
 		// µìÎñ¼è¤ê°·¤¤¥¯¥é¥¹
 		include_once(JD_LC_CLASS_PATH);
 		$lc = JD_LC_CLASS_NAME;
-		$this->lc =& new $lc();
+		$this->lc = new $lc();
 		
 	}
 	
