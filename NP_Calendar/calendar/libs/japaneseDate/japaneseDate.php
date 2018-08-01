@@ -2,7 +2,7 @@
 // +----------------------------------------------------------------------+
 // |                          Japanese Date                               |
 // +----------------------------------------------------------------------+
-// | PHP Version 4¡¦5                                                     |
+// | PHP Version 4ãƒ»5                                                     |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2002-2006 The Artisan Member                           |
 // +----------------------------------------------------------------------+
@@ -10,7 +10,7 @@
 // +----------------------------------------------------------------------+
 //
 /**
- * ÆüËÜ¸ì/ÏÂÎñÆüÉÕ¥¯¥é¥¹¥á¥¤¥ó¥Õ¥¡¥¤¥ë
+ * æ—¥æœ¬èª/å’Œæš¦æ—¥ä»˜ã‚¯ãƒ©ã‚¹ãƒ¡ã‚¤ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«
  *
  * @package JapaneseDate
  * @version 1.7
@@ -19,17 +19,17 @@
  */
 
 /**
- * µìÎñ¥¯¥é¥¹Ì¾
+ * æ—§æš¦ã‚¯ãƒ©ã‚¹å
  */
 define("JD_LC_CLASS_NAME", "japaneseDate_lunarCalendar");
 
 /**
- * µìÎñ¥¯¥é¥¹¥Ñ¥¹
+ * æ—§æš¦ã‚¯ãƒ©ã‚¹ãƒ‘ã‚¹
  */
 define("JD_LC_CLASS_PATH", dirname(__FILE__).DIRECTORY_SEPARATOR."lunarCalendar.php");
 
 /**
- * ½ËÆüÄê¿ô
+ * ç¥æ—¥å®šæ•°
  */
 define("JD_NO_HOLIDAY", 0);
 define("JD_NEW_YEAR_S_DAY", 1);
@@ -55,13 +55,13 @@ define("JD_LABOR_THANKSGIVING_DAY", 20);
 define("JD_REGNAL_DAY", 21);
 
 /**
- * ÆÃÄê·îÄê¿ô
+ * ç‰¹å®šæœˆå®šæ•°
  */
 define("JD_VERNAL_EQUINOX_DAY_MONTH", 3);
 define("JD_AUTUMNAL_EQUINOX_DAY_MONTH", 9);
 
 /**
- * ÍËÆüÄê¿ô
+ * æ›œæ—¥å®šæ•°
  */
 define("JD_SUNDAY",    0);
 define("JD_MONDAY",    1);
@@ -73,7 +73,7 @@ define("JD_SATURDAY",  6);
 
 
 /**
- * ÆüËÜ¸ì/ÏÂÎñÆüÉÕ¥¯¥é¥¹
+ * æ—¥æœ¬èª/å’Œæš¦æ—¥ä»˜ã‚¯ãƒ©ã‚¹
  *
  * @package JapaneseDate
  * @version 2.0
@@ -83,7 +83,7 @@ define("JD_SATURDAY",  6);
 class japaneseDate
 {
 	/**
-	 * µìÎñ¥¯¥é¥¹¥ª¥Ö¥¸¥§¥¯¥È
+	 * æ—§æš¦ã‚¯ãƒ©ã‚¹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 * @var object
 	 */
 	var $kyureki;
@@ -93,40 +93,40 @@ class japaneseDate
 	 */
 	var $_holiday_name = array(
 		0 => "", 
-		1 => "¸µÃ¶",
-		2 => "À®¿Í¤ÎÆü",
-		3 => "·ú¹ñµ­Ç°¤ÎÆü",
-		4 => "¾¼ÏÂÅ·¹Ä¤ÎÂçÁÓ¤ÎÎé",
-		5 => "½ÕÊ¬¤ÎÆü",
-		6 => "¾¼ÏÂ¤ÎÆü",
-		7 => "¤ß¤É¤ê¤ÎÆü",
-		8 => "Å·¹ÄÃÂÀ¸Æü",
-		9 => "¹ÄÂÀ»ÒÌÀ¿Î¿Æ²¦¤Î·ëº§¤Îµ·",
-		10 => "·ûË¡µ­Ç°Æü",
-		11 => "¹ñÌ±¤ÎµÙÆü",
-		12 => "¤³¤É¤â¤ÎÆü",
-		13 => "¿¶ÂØµÙÆü",
-		14 => "¹ÄÂÀ»ÒÆÁ¿Î¿Æ²¦¤Î·ëº§¤Îµ·",
-		15 => "³¤¤ÎÆü",
-		16 => "½©Ê¬¤ÎÆü",
-		17 => "·ÉÏ·¤ÎÆü",
-		18 => "ÂÎ°é¤ÎÆü",
-		19 => "Ê¸²½¤ÎÆü",
-		20 => "¶ĞÏ«´¶¼Õ¤ÎÆü",
-		21 => "Â¨°ÌÎéÀµÅÂ¤Îµ·",
+		1 => "å…ƒæ—¦",
+		2 => "æˆäººã®æ—¥",
+		3 => "å»ºå›½è¨˜å¿µã®æ—¥",
+		4 => "æ˜­å’Œå¤©çš‡ã®å¤§å–ªã®ç¤¼",
+		5 => "æ˜¥åˆ†ã®æ—¥",
+		6 => "æ˜­å’Œã®æ—¥",
+		7 => "ã¿ã©ã‚Šã®æ—¥",
+		8 => "å¤©çš‡èª•ç”Ÿæ—¥",
+		9 => "çš‡å¤ªå­æ˜ä»è¦ªç‹ã®çµå©šã®å„€",
+		10 => "æ†²æ³•è¨˜å¿µæ—¥",
+		11 => "å›½æ°‘ã®ä¼‘æ—¥",
+		12 => "ã“ã©ã‚‚ã®æ—¥",
+		13 => "æŒ¯æ›¿ä¼‘æ—¥",
+		14 => "çš‡å¤ªå­å¾³ä»è¦ªç‹ã®çµå©šã®å„€",
+		15 => "æµ·ã®æ—¥",
+		16 => "ç§‹åˆ†ã®æ—¥",
+		17 => "æ•¬è€ã®æ—¥",
+		18 => "ä½“è‚²ã®æ—¥",
+		19 => "æ–‡åŒ–ã®æ—¥",
+		20 => "å‹¤åŠ´æ„Ÿè¬ã®æ—¥",
+		21 => "å³ä½ç¤¼æ­£æ®¿ã®å„€",
 	);
 	
-	var $_weekday_name = array("Æü", "·î", "²Ğ", "¿å", "ÌÚ", "¶â", "ÅÚ");
+	var $_weekday_name = array("æ—¥", "æœˆ", "ç«", "æ°´", "æœ¨", "é‡‘", "åœŸ");
 	
-	var $_during_the_war_period_weekday_name = array("·î", "·î", "²Ğ", "¿å", "ÌÚ", "¶â", "¶â");
+	var $_during_the_war_period_weekday_name = array("æœˆ", "æœˆ", "ç«", "æ°´", "æœ¨", "é‡‘", "é‡‘");
 	
-	var $_month_name = array("", "ËÓ·î", "Ç¡·î", "ÌïÀ¸", "±¬·î", "»©·î", "¿åÌµ·î", "Ê¸·î", "ÍÕ·î", "Ä¹·î", "¿ÀÌµ·î", "Áú·î", "»ÕÁö");
+	var $_month_name = array("", "ç¦æœˆ", "å¦‚æœˆ", "å¼¥ç”Ÿ", "å¯æœˆ", "çšæœˆ", "æ°´ç„¡æœˆ", "æ–‡æœˆ", "è‘‰æœˆ", "é•·æœˆ", "ç¥ç„¡æœˆ", "éœœæœˆ", "å¸«èµ°");
 	
-	var $_six_weekday = array("Âç°Â", "ÀÖ¸ı", "Àè¾¡", "Í§°ú", "ÀèÉé", "Ê©ÌÇ");
+	var $_six_weekday = array("å¤§å®‰", "èµ¤å£", "å…ˆå‹", "å‹å¼•", "å…ˆè² ", "ä»æ»…");
 	
-	var $_oriental_zodiac = array("°ç", "»Ò", "±¯", "ÆÒ", "±¬", "Ã¤", "Ì¦", "¸á", "Ì¤", "¿½", "ÆÓ", "Øü",);
+	var $_oriental_zodiac = array("äº¥", "å­", "ä¸‘", "å¯…", "å¯", "è¾°", "å·³", "åˆ", "æœª", "ç”³", "é…‰", "æˆŒ",);
 	
-	var $_era_name = array("¾¼ÏÂ", "Ê¿À®");
+	var $_era_name = array("æ˜­å’Œ", "å¹³æˆ");
 	
 	var $_era_calc = array(1925, 1988);
 	
@@ -137,13 +137,13 @@ class japaneseDate
 	/**#@-*/
 	
 	/**
-	 * ¥³¥ó¥¹¥È¥é¥¯¥¿
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 *
 	 * @return void
 	*/
 	function __construct()
 	{
-		// µìÎñ¼è¤ê°·¤¤¥¯¥é¥¹
+		// æ—§æš¦å–ã‚Šæ‰±ã„ã‚¯ãƒ©ã‚¹
 		include_once(JD_LC_CLASS_PATH);
 		$lc = JD_LC_CLASS_NAME;
 		$this->lc = new $lc();
@@ -151,9 +151,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * »ØÄê·î¤Î½ËÆü¥ê¥¹¥È¤ò¼èÆÀ¤¹¤ë
+	 * æŒ‡å®šæœˆã®ç¥æ—¥ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 * @return array
 	 */
 	function getHolidayList($time_stamp)
@@ -187,9 +187,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ´³»Ù¥­¡¼¤òÊÖ¤¹
+	 * å¹²æ”¯ã‚­ãƒ¼ã‚’è¿”ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 * @return int
 	 */
 	function getOrientalZodiac($time_stamp)
@@ -199,27 +199,27 @@ class japaneseDate
 	}
 	
 	/**
-	 * Ç¯¹æ¥­¡¼¤òÊÖ¤¹
+	 * å¹´å·ã‚­ãƒ¼ã‚’è¿”ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 * @return int
 	 */
 	function getEraName($time_stamp)
 	{
 		if (mktime(0, 0, 0, 1 , 7, 1989) >= $time_stamp) {
-			//¾¼ÏÂ
+			//æ˜­å’Œ
 			return 0;
 		} else {
-			//Ê¿À®
+			//å¹³æˆ
 			return 1;
 		}
 	}
 
 	/**
-	 * ÏÂÎñ¤òÊÖ¤¹
+	 * å’Œæš¦ã‚’è¿”ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
-	 * @param int ÏÂÎñ¥â¡¼¥É(¶õ¤Ë¤¹¤ë¤È¡¢¼«Æ°¼èÆÀ)
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
+	 * @param int å’Œæš¦ãƒ¢ãƒ¼ãƒ‰(ç©ºã«ã™ã‚‹ã¨ã€è‡ªå‹•å–å¾—)
 	 * @return int
 	 */
 	function getEraYear($time_stamp, $key = -1)
@@ -231,9 +231,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ÆüËÜ¸ì¥Õ¥©¡¼¥Ş¥Ã¥È¤µ¤ì¤¿µÙÆüÌ¾¤òÊÖ¤¹
+	 * æ—¥æœ¬èªãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã•ã‚ŒãŸä¼‘æ—¥åã‚’è¿”ã™
 	 *
-	 * @param int $key µÙÆü¥­¡¼
+	 * @param int $key ä¼‘æ—¥ã‚­ãƒ¼
 	 * @return string
 	 */
 	function viewHoliday($key)
@@ -242,9 +242,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ÆüËÜ¸ì¥Õ¥©¡¼¥Ş¥Ã¥È¤µ¤ì¤¿ÍËÆüÌ¾¤òÊÖ¤¹
+	 * æ—¥æœ¬èªãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã•ã‚ŒãŸæ›œæ—¥åã‚’è¿”ã™
 	 *
-	 * @param int $key ÍËÆü¥­¡¼
+	 * @param int $key æ›œæ—¥ã‚­ãƒ¼
 	 * @return string
 	 */
 	function viewWeekday($key)
@@ -254,9 +254,9 @@ class japaneseDate
 	
 	
 	/**
-	 * ÆüËÜ¸ì¥Õ¥©¡¼¥Ş¥Ã¥È¤µ¤ì¤¿µìÎñ·îÌ¾¤òÊÖ¤¹
+	 * æ—¥æœ¬èªãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã•ã‚ŒãŸæ—§æš¦æœˆåã‚’è¿”ã™
 	 *
-	 * @param int $key ·î¥­¡¼
+	 * @param int $key æœˆã‚­ãƒ¼
 	 * @return string
 	 */
 	function viewMonth($key)
@@ -266,9 +266,9 @@ class japaneseDate
 	
 	
 	/**
-	 * ÆüËÜ¸ì¥Õ¥©¡¼¥Ş¥Ã¥È¤µ¤ì¤¿Ï»ÍËÌ¾¤òÊÖ¤¹
+	 * æ—¥æœ¬èªãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã•ã‚ŒãŸå…­æ›œåã‚’è¿”ã™
 	 *
-	 * @param int $key Ï»ÍË¥­¡¼
+	 * @param int $key å…­æ›œã‚­ãƒ¼
 	 * @return string
 	 */
 	function viewSixWeekday($key)
@@ -278,9 +278,9 @@ class japaneseDate
 	
 	
 	/**
-	 * ÆüËÜ¸ì¥Õ¥©¡¼¥Ş¥Ã¥È¤µ¤ì¤¿ÀïÁèÃæÍËÆüÌ¾¤òÊÖ¤¹
+	 * æ—¥æœ¬èªãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã•ã‚ŒãŸæˆ¦äº‰ä¸­æ›œæ—¥åã‚’è¿”ã™
 	 *
-	 * @param int $key ÍËÆü¥­¡¼
+	 * @param int $key æ›œæ—¥ã‚­ãƒ¼
 	 * @return string
 	 */
 	function viewWarWeekday($key)
@@ -289,9 +289,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ÆüËÜ¸ì¥Õ¥©¡¼¥Ş¥Ã¥È¤µ¤ì¤¿´³»Ù¤òÊÖ¤¹
+	 * æ—¥æœ¬èªãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã•ã‚ŒãŸå¹²æ”¯ã‚’è¿”ã™
 	 *
-	 * @param int $key ´³»Ù¥­¡¼
+	 * @param int $key å¹²æ”¯ã‚­ãƒ¼
 	 * @return string
 	 */
 	function viewOrientalZodiac($key)
@@ -300,9 +300,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ÆüËÜ¸ì¥Õ¥©¡¼¥Ş¥Ã¥È¤µ¤ì¤¿Ç¯¹æ¤òÊÖ¤¹
+	 * æ—¥æœ¬èªãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã•ã‚ŒãŸå¹´å·ã‚’è¿”ã™
 	 *
-	 * @param int $key Ç¯¹æ¥­¡¼
+	 * @param int $key å¹´å·ã‚­ãƒ¼
 	 * @return string
 	 */
 	function viewEraName($key)
@@ -311,10 +311,10 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ÕÊ¬¤ÎÆü¤ò¼èÆÀ
+	 * æ˜¥åˆ†ã®æ—¥ã‚’å–å¾—
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
-	 * @return int ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
+	 * @return int ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function getVrenalEquinoxDay($year)
 	{
@@ -331,10 +331,10 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½©Ê¬¤ÎÆü¤ò¼èÆÀ
+	 * ç§‹åˆ†ã®æ—¥ã‚’å–å¾—
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
-	 * @return int ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
+	 * @return int ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function getAutumnEquinoxDay($year)
 	{
@@ -351,10 +351,10 @@ class japaneseDate
 	}
 	
 	/**
-	 * ¥¿¥¤¥à¥¹¥¿¥ó¥×¤òÅ¸³«¤·¤Æ¡¢ÆüÉÕ¤Î¾ÜºÙÇÛÎó¤ò¼èÆÀ¤¹¤ë
+	 * ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—ã‚’å±•é–‹ã—ã¦ã€æ—¥ä»˜ã®è©³ç´°é…åˆ—ã‚’å–å¾—ã™ã‚‹
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
-	 * @return int ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
+	 * @return int ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function makeDateArray($time_stamp)
 	{
@@ -371,9 +371,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ¼·ÍË¤ò¿ôÃÍ²½¤·¤ÆÊÖ¤·¤Ş¤¹
+	 * ä¸ƒæ›œã‚’æ•°å€¤åŒ–ã—ã¦è¿”ã—ã¾ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function getWeekday($time_stamp)
 	{
@@ -381,9 +381,9 @@ class japaneseDate
 	}
 
 	/**
-	 * Ç¯¤ò¿ôÃÍ²½¤·¤ÆÊÖ¤·¤Ş¤¹
+	 * å¹´ã‚’æ•°å€¤åŒ–ã—ã¦è¿”ã—ã¾ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function getYear($time_stamp)
 	{
@@ -391,9 +391,9 @@ class japaneseDate
 	}
 
 	/**
-	 * ·î¤ò¿ôÃÍ²½¤·¤ÆÊÖ¤·¤Ş¤¹
+	 * æœˆã‚’æ•°å€¤åŒ–ã—ã¦è¿”ã—ã¾ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function getMonth($time_stamp)
 	{
@@ -401,9 +401,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * Æü¤ò¿ôÃÍ²½¤·¤ÆÊÖ¤·¤Ş¤¹
+	 * æ—¥ã‚’æ•°å€¤åŒ–ã—ã¦è¿”ã—ã¾ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function getDay($time_stamp)
 	{
@@ -411,9 +411,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * Æü¤òÉ½¼¨ÍÑ¥Õ¥©¡¼¥Ş¥Ã¥È¤ÇÊÖ¤·¤Ş¤¹
+	 * æ—¥ã‚’è¡¨ç¤ºç”¨ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã§è¿”ã—ã¾ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function getStrDay($time_stamp)
 	{
@@ -421,9 +421,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * Ï»ÍË¤ò¿ôÃÍ²½¤·¤ÆÊÖ¤·¤Ş¤¹
+	 * å…­æ›œã‚’æ•°å€¤åŒ–ã—ã¦è¿”ã—ã¾ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function getSixWeekday($time_stamp)
 	{
@@ -431,26 +431,26 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯°ì·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯ä¸€æœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getJanuaryHoliday($year)
 	{
 		$res[1] = JD_NEW_YEAR_S_DAY;
-		//¿¶ÂØµÙÆü³ÎÇ§
+		//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 		if ($this->getWeekDay(mktime(0, 0, 0, 1, 1, $year)) == JD_SUNDAY) {
 			$res[2] = JD_COMPENSATING_HOLIDAY;
 		}
 		if ($year >= 2000) {
-			//2000Ç¯°Ê¹ß¤ÏÂèÆó·îÍËÆü¤ËÊÑ¹¹
+			//2000å¹´ä»¥é™ã¯ç¬¬äºŒæœˆæ›œæ—¥ã«å¤‰æ›´
 			$second_monday = $this->getDayByWeekly($year, 1, JD_MONDAY, 2);
 			$res[$second_monday] = JD_COMING_OF_AGE_DAY;
 			
 		} else {
 			$res[15] = JD_COMING_OF_AGE_DAY;
-			//¿¶ÂØµÙÆü³ÎÇ§
+			//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 			if ($this->getWeekDay(mktime(0, 0, 0, 1, 15, $year)) == JD_SUNDAY) {
 				$res[16] = JD_COMPENSATING_HOLIDAY;
 			}
@@ -459,15 +459,15 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯Æó·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯äºŒæœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getFebruaryHoliday($year)
 	{
 		$res[11] = JD_NATIONAL_FOUNDATION_DAY;
-		//¿¶ÂØµÙÆü³ÎÇ§
+		//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 		if ($this->getWeekDay(mktime(0, 0, 0, 2, 11, $year)) == JD_SUNDAY) {
 			$res[12] = JD_COMPENSATING_HOLIDAY;
 		}
@@ -478,16 +478,16 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯»°·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯ä¸‰æœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getMarchHoliday($year)
 	{
 		$VrenalEquinoxDay = $this->getVrenalEquinoxDay($year);
 		$res[$this->getDay($VrenalEquinoxDay)] = JD_VERNAL_EQUINOX_DAY;
-		//¿¶ÂØµÙÆü³ÎÇ§
+		//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 		if ($this->getWeekDay($VrenalEquinoxDay) == JD_SUNDAY) {
 			$res[$this->getDay($VrenalEquinoxDay)+1] = JD_COMPENSATING_HOLIDAY;
 		}
@@ -495,9 +495,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯»Í·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯å››æœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getAprilHoliday($year)
@@ -512,7 +512,7 @@ class japaneseDate
 		} else {
 			$res[29] = JD_THE_EMPEROR_S_BIRTHDAY;
 		}
-		//¿¶ÂØµÙÆü³ÎÇ§
+		//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 		if ($this->getWeekDay(mktime(0, 0, 0, 4, 29, $year)) == JD_SUNDAY) {
 			$res[30] = JD_COMPENSATING_HOLIDAY;
 		}
@@ -520,9 +520,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯¸Ş·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯äº”æœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getMayHoliday($year)
@@ -531,7 +531,7 @@ class japaneseDate
 		if ($year >= 2007) {
 			$res[4] = JD_GREENERY_DAY;
 		} elseif ($year >= 1986) {
-			// 5/4¤¬ÆüÍËÆü¤Î¾ì¹ç¤Ï¤½¤Î¤Ş¤Ş¤·îÍËÆü¤Î¾ì¹ç¤Ï¤Ï¡Ø·ûË¡µ­Ç°Æü¤Î¿¶ÂØµÙÆü¡Ù(2006Ç¯Ëø)
+			// 5/4ãŒæ—¥æ›œæ—¥ã®å ´åˆã¯ãã®ã¾ã¾ï½¤æœˆæ›œæ—¥ã®å ´åˆã¯ã¯ã€æ†²æ³•è¨˜å¿µæ—¥ã®æŒ¯æ›¿ä¼‘æ—¥ã€(2006å¹´è¿„)
 			if ($this->getWeekday(mktime(0, 0, 0, 5, 4, $year)) > JD_MONDAY) {
 				$res[4] = JD_NATIONAL_HOLIDAY;
 			} elseif ($this->getWeekday(mktime(0, 0, 0, 5, 4, $year)) == JD_MONDAY)  {
@@ -543,7 +543,7 @@ class japaneseDate
 			$res[6] = JD_COMPENSATING_HOLIDAY;
 		}
 		if ($year >= 2007) {
-			// [5/3,5/4¤¬ÆüÍË]¤Ê¤é¡¢¿¶ÂØµÙÆü
+			// [5/3,5/4ãŒæ—¥æ›œ]ãªã‚‰ã€æŒ¯æ›¿ä¼‘æ—¥
 			if (($this->getWeekday(mktime(0, 0, 0, 5, 4, $year)) == JD_SUNDAY) || ($this->getWeekday(mktime(0, 0, 0, 5, 3, $year)) == JD_SUNDAY)) {
 				$res[6] = JD_COMPENSATING_HOLIDAY;
 			}
@@ -552,9 +552,9 @@ class japaneseDate
 	}
 
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯Ï»·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯å…­æœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getJuneHoliday($year)
@@ -568,14 +568,14 @@ class japaneseDate
 	}
 	
 	/**
-	 * ±Ä¶ÈÆü¤ò¼èÆÀ¤·¤Ş¤¹
+	 * å–¶æ¥­æ—¥ã‚’å–å¾—ã—ã¾ã™
 	 *
-	 * @param int int $time_stamp ¼èÆÀ³«»ÏÆü
-	 * @param int int $lim_day ¼èÆÀÆü¿ô
-	 * @param boolean $luna µìÎñ¾ğÊó¤ò»ÈÍÑ¤¹¤ë¤«¤É¤¦¤«(false¤Ë¤¹¤ë¤È¡¢µìÎñ¾ğÊó¤ò¼èÆÀ¤·¤Ê¤¤Âå¤ï¤ê¤Ë¡¢¤è¤ê¡¢¹âÂ®¤ËÆ°ºî¤·¤Ş¤¹)
-	 * @param int boolean $is_bypass_holiday ½ËÆü¤òÌµ»ë¤¹¤ë¤«¤É¤¦¤« (optional)
-	 * @param int boolean|array $bypass_week_arr Ìµ»ë¤¹¤ëÍËÆü (optional)
-	 * @param int boolean|array $is_bypass_date Ìµ»ë¤¹¤ëÆü (optional)
+	 * @param int int $time_stamp å–å¾—é–‹å§‹æ—¥
+	 * @param int int $lim_day å–å¾—æ—¥æ•°
+	 * @param boolean $luna æ—§æš¦æƒ…å ±ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹(falseã«ã™ã‚‹ã¨ã€æ—§æš¦æƒ…å ±ã‚’å–å¾—ã—ãªã„ä»£ã‚ã‚Šã«ã€ã‚ˆã‚Šã€é«˜é€Ÿã«å‹•ä½œã—ã¾ã™)
+	 * @param int boolean $is_bypass_holiday ç¥æ—¥ã‚’ç„¡è¦–ã™ã‚‹ã‹ã©ã†ã‹ (optional)
+	 * @param int boolean|array $bypass_week_arr ç„¡è¦–ã™ã‚‹æ›œæ—¥ (optional)
+	 * @param int boolean|array $is_bypass_date ç„¡è¦–ã™ã‚‹æ—¥ (optional)
 	 * @return array
 	 */
 	function getWorkingDay($time_stamp, $lim_day, $luna = true, $is_bypass_holiday = true, $bypass_week_arr = false, $is_bypass_date = false )
@@ -619,9 +619,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯¼··î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯ä¸ƒæœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getJulyHoliday($year)
@@ -631,7 +631,7 @@ class japaneseDate
 			$res[$third_monday] = JD_MARINE_DAY;
 		} elseif ($year >= 1996) {
 			$res[20] = JD_MARINE_DAY;
-			//¿¶ÂØµÙÆü³ÎÇ§
+			//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 			if ($this->getWeekDay(mktime(0, 0, 0, 7, 20, $year)) == JD_SUNDAY) {
 				$res[21] = JD_COMPENSATING_HOLIDAY;
 			}
@@ -642,9 +642,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯È¬·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯å…«æœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getAugustHoliday($year)
@@ -653,16 +653,16 @@ class japaneseDate
 	}
 
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯¶å·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯ä¹æœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getSeptemberHoliday($year)
 	{
 		$autumnEquinoxDay = $this->getAutumnEquinoxDay($year);
 		$res[$this->getDay($autumnEquinoxDay)] = JD_AUTUMNAL_EQUINOX_DAY;
-		//¿¶ÂØµÙÆü³ÎÇ§
+		//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 		if ($this->getWeekDay($autumnEquinoxDay) == 0) {
 			$res[$this->getDay($autumnEquinoxDay)+1] = JD_COMPENSATING_HOLIDAY;
 		}
@@ -671,7 +671,7 @@ class japaneseDate
 			$third_monday = $this->getDayByWeekly($year, 9, JD_MONDAY, 3);
 			$res[$third_monday] = JD_RESPECT_FOR_SENIOR_CITIZENS_DAY;
 			
-			//·ÉÏ·¤ÎÆü¤È¡¢½©Ê¬¤ÎÆü¤Î´Ö¤ÎÆü¤ÏµÙ¤ß¤Ë¤Ê¤ë
+			//æ•¬è€ã®æ—¥ã¨ã€ç§‹åˆ†ã®æ—¥ã®é–“ã®æ—¥ã¯ä¼‘ã¿ã«ãªã‚‹
 			if (($this->getDay($autumnEquinoxDay) - 1) == ($third_monday + 1)) {
 				$res[($this->getDay($autumnEquinoxDay) - 1)] = JD_NATIONAL_HOLIDAY;
 			}
@@ -683,20 +683,20 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯½½·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯åæœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getOctoberHoliday($year)
 	{
 		if ($year >= 2000) {
-			//2000Ç¯°Ê¹ß¤ÏÂèÆó·îÍËÆü¤ËÊÑ¹¹
+			//2000å¹´ä»¥é™ã¯ç¬¬äºŒæœˆæ›œæ—¥ã«å¤‰æ›´
 			$second_monday = $this->getDayByWeekly($year, 10, JD_MONDAY, 2);
 			$res[$second_monday] = JD_SPORTS_DAY;
 		} elseif ($year >= 1966) {
 			$res[10] = JD_SPORTS_DAY;
-			//¿¶ÂØµÙÆü³ÎÇ§
+			//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 			if ($this->getWeekDay(mktime(0, 0, 0, 10, 10, $year)) == JD_SUNDAY) {
 				$res[11] = JD_COMPENSATING_HOLIDAY;
 			}
@@ -705,15 +705,15 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯½½°ì·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯åä¸€æœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getNovemberHoliday($year)
 	{
 		$res[3] = JD_CULTURE_DAY;
-		//¿¶ÂØµÙÆü³ÎÇ§
+		//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 		if ($this->getWeekDay(mktime(0, 0, 0, 11, 3, $year)) == JD_SUNDAY) {
 			$res[4] = JD_COMPENSATING_HOLIDAY;
 		}
@@ -723,7 +723,7 @@ class japaneseDate
 		}
 		
 		$res[23] = JD_LABOR_THANKSGIVING_DAY;
-		//¿¶ÂØµÙÆü³ÎÇ§
+		//æŒ¯æ›¿ä¼‘æ—¥ç¢ºèª
 		if ($this->getWeekDay(mktime(0, 0, 0, 11, 23, $year)) == JD_SUNDAY) {
 			$res[24] = JD_COMPENSATING_HOLIDAY;
 		}
@@ -731,9 +731,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ½ËÆüÈ½Äê¥í¥¸¥Ã¥¯½½Æó·î
+	 * ç¥æ—¥åˆ¤å®šãƒ­ã‚¸ãƒƒã‚¯åäºŒæœˆ
 	 *
-	 * @param int $year Ç¯
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getDecemberHoliday($year)
@@ -748,12 +748,12 @@ class japaneseDate
 	}
 	
 	/**
-	 * Âè¡û ¢£ÍËÆü¤ÎÆüÉÕ¤ò¼èÆÀ¤·¤Ş¤¹¡£
+	 * ç¬¬â—‹ â– æ›œæ—¥ã®æ—¥ä»˜ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 *
-	 * @param int $year Ç¯
-	 * @param int $month ·î
-	 * @param int $weekly ÍËÆü
-	 * @param int $renb ²¿½µÌÜ¤«
+	 * @param int $year å¹´
+	 * @param int $month æœˆ
+	 * @param int $weekly æ›œæ—¥
+	 * @param int $renb ä½•é€±ç›®ã‹
 	 * @return int
 	 */
 	function getDayByWeekly($year, $month, $weekly, $renb = 1)
@@ -787,11 +787,11 @@ class japaneseDate
 	}
 	
 	/**
-	 * »ØÄê·î¤Î¥«¥ì¥ó¥À¡¼ÇÛÎó¤ò¼èÆÀ¤·¤Ş¤¹
+	 * æŒ‡å®šæœˆã®ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼é…åˆ—ã‚’å–å¾—ã—ã¾ã™
 	 *
-	 * @param int $year Ç¯
-	 * @param int $month ·î
-	 * @param boolean $luna µìÎñ¾ğÊó¤ò»ÈÍÑ¤¹¤ë¤«¤É¤¦¤«(false¤Ë¤¹¤ë¤È¡¢µìÎñ¾ğÊó¤ò¼èÆÀ¤·¤Ê¤¤Âå¤ï¤ê¤Ë¡¢¤è¤ê¡¢¹âÂ®¤ËÆ°ºî¤·¤Ş¤¹)
+	 * @param int $year å¹´
+	 * @param int $month æœˆ
+	 * @param boolean $luna æ—§æš¦æƒ…å ±ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹(falseã«ã™ã‚‹ã¨ã€æ—§æš¦æƒ…å ±ã‚’å–å¾—ã—ãªã„ä»£ã‚ã‚Šã«ã€ã‚ˆã‚Šã€é«˜é€Ÿã«å‹•ä½œã—ã¾ã™)
 	 */
 	function getCalendar($year, $month, $luna = true)
 	{
@@ -800,13 +800,13 @@ class japaneseDate
 	}
 	
 	/**
-	 * »ØÄêÈÏ°Ï¤Î¥«¥ì¥ó¥À¡¼ÇÛÎó¤ò¼èÆÀ¤·¤Ş¤¹
+	 * æŒ‡å®šç¯„å›²ã®ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼é…åˆ—ã‚’å–å¾—ã—ã¾ã™
 	 *
-	 * @param int $year Ç¯
-	 * @param int $month ·î
-	 * @param int $str ³«»ÏÆü
-	 * @param int $lim ´ü´Ö(Æü)
-	 * @param boolean $luna µìÎñ¾ğÊó¤ò»ÈÍÑ¤¹¤ë¤«¤É¤¦¤«(false¤Ë¤¹¤ë¤È¡¢µìÎñ¾ğÊó¤ò¼èÆÀ¤·¤Ê¤¤Âå¤ï¤ê¤Ë¡¢¤è¤ê¡¢¹âÂ®¤ËÆ°ºî¤·¤Ş¤¹)
+	 * @param int $year å¹´
+	 * @param int $month æœˆ
+	 * @param int $str é–‹å§‹æ—¥
+	 * @param int $lim æœŸé–“(æ—¥)
+	 * @param boolean $luna æ—§æš¦æƒ…å ±ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹(falseã«ã™ã‚‹ã¨ã€æ—§æš¦æƒ…å ±ã‚’å–å¾—ã—ãªã„ä»£ã‚ã‚Šã«ã€ã‚ˆã‚Šã€é«˜é€Ÿã«å‹•ä½œã—ã¾ã™)
 	 */
 	function getSpanCalendar($year, $month, $str, $lim, $luna = true)
 	{
@@ -824,14 +824,14 @@ class japaneseDate
 			}
 			return $res;
 		} else {
-			// ´ü´Ö¥ê¥¹¥È
+			// æœŸé–“ãƒªã‚¹ãƒˆ
 			$time_array = array();
 			while ($lim != 0) {
 				$time_stamp = mktime(0, 0, 0, date("m", $time_stamp), date("d", $time_stamp) + 1, date("Y", $time_stamp));
 				$time_array[] = $time_stamp;
 				$lim--;
 			}
-			// µìÎñ
+			// æ—§æš¦
 			$luna_array = $this->getLunaCalendarList($time_array, JD_KEY_TIMESTAMP);
 			foreach ($time_array as $time_stamp) {
 				$gc = $this->purseTime($time_stamp, $luna_array[$time_stamp]);
@@ -842,10 +842,10 @@ class japaneseDate
 	}
 	
 	/**
-	 * ¥¿¥¤¥à¥¹¥¿¥ó¥×¤òÅ¸³«¤·¤Æ¡¢ÆüÉÕ¾ğÊó¤òÊÖ¤·¤Ş¤¹
+	 * ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—ã‚’å±•é–‹ã—ã¦ã€æ—¥ä»˜æƒ…å ±ã‚’è¿”ã—ã¾ã™
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
-	 * @param boolean $luna µìÎñ¾ğÊó¤ò»ÈÍÑ¤¹¤ë¤«¤É¤¦¤«(false¤Ë¤¹¤ë¤È¡¢µìÎñ¾ğÊó¤ò¼èÆÀ¤·¤Ê¤¤Âå¤ï¤ê¤Ë¡¢¤è¤ê¹âÂ®¤ËÆ°ºî¤·¤Ş¤¹)
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
+	 * @param boolean $luna æ—§æš¦æƒ…å ±ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹(falseã«ã™ã‚‹ã¨ã€æ—§æš¦æƒ…å ±ã‚’å–å¾—ã—ãªã„ä»£ã‚ã‚Šã«ã€ã‚ˆã‚Šé«˜é€Ÿã«å‹•ä½œã—ã¾ã™)
 	 * @return array
 	 */
 	function purseTime($time_stamp, $luna = true)
@@ -883,9 +883,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * µìÎñ¡¦·îÎğ¤ò¼èÆÀ¤¹¤ë
+	 * æ—§æš¦ãƒ»æœˆé½¢ã‚’å–å¾—ã™ã‚‹
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 * @see japaneseDate_lunarCalendar::getLunarCalendar()
 	 * @return array
 	 */
@@ -895,9 +895,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * µìÎñ¡¦·îÎğ¥ê¥¹¥È¤ò¼èÆÀ¤¹¤ë
+	 * æ—§æš¦ãƒ»æœˆé½¢ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
 	 *
-	 * @param array $time_stamp_array ¥¿¥¤¥à¥¹¥¿¥ó¥×¤Î¥ê¥¹¥È
+	 * @param array $time_stamp_array ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—ã®ãƒªã‚¹ãƒˆ
 	 * @param array $mode JD_KEY_TIMESTAMP|JD_KEY_ORDERD
 	 * @see japaneseDate_lunarCalendar::getLunaCalendarList()
 	 * @return array
@@ -908,9 +908,9 @@ class japaneseDate
 	}
 	
 	/**
-	 * ¥æ¥Ë¥Ã¥¯¥¹¥¿¥¤¥à¥¹¥¿¥ó¥×¤«¤é¡¢¥æ¥ê¥¦¥¹Îñ¤ò¼èÆÀ¤·¤Ş¤¹¡£
+	 * ãƒ¦ãƒ‹ãƒƒã‚¯ã‚¹ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—ã‹ã‚‰ã€ãƒ¦ãƒªã‚¦ã‚¹æš¦ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 * @see japaneseDate_lunarCalendar::time2JD()
 	 * @return float
 	 */
@@ -921,9 +921,9 @@ class japaneseDate
 	
 	
 	/**
-	 * ºó¤Î¥ê¥¹¥È¤ò¼èÆÀ¤¹¤ë
+	 * æœ”ã®ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
 	 *
-	 * @param int $time_stamp ¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 * @see japaneseDate_lunarCalendar::getLunarCalendar()
 	 * @return array
 	 */
@@ -934,32 +934,32 @@ class japaneseDate
 	
 	
 	/**
-	 * ÆüËÜ¸ì¥«¥ì¥ó¥À¡¼ÂĞ±ş¤·¤¿strftime()
+	 * æ—¥æœ¬èªã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼å¯¾å¿œã—ãŸstrftime()
 	 *
-	 * <pre>{@link http://php.five-foxes.com/module/php_man/index.php?web=function.strftime strftime¤Î»ÅÍÍ}
-	 * ¤Ë²Ã¤¨¡¢
-	 * %J 1¡Á31¤ÎÆü
-	 * %g 1¡Á9¤Ê¤éÀèÆ¬¤Ë¥¹¥Ú¡¼¥¹¤òÉÕ¤±¤ë¡¢1¡Á31¤ÎÆü
-	 * %K ÏÂÌ¾ÍËÆü
-	 * %k Ï»ÍËÈÖ¹æ
-	 * %6 Ï»ÍË
-	 * %K ÍËÆü
-	 * %l ½ËÆüÈÖ¹æ
-	 * %L ½ËÆü
-	 * %o ´³»ÙÈÖ¹æ
-	 * %O ´³»Ù
-	 * %N 1¡Á12¤Î·î
-	 * %E µìÎñÇ¯
-	 * %G µìÎñ¤Î·î
-	 * %F Ç¯¹æ
-	 * %f Ç¯¹æID
+	 * <pre>{@link http://php.five-foxes.com/module/php_man/index.php?web=function.strftime strftimeã®ä»•æ§˜}
+	 * ã«åŠ ãˆã€
+	 * %J 1ï½31ã®æ—¥
+	 * %g 1ï½9ãªã‚‰å…ˆé ­ã«ã‚¹ãƒšãƒ¼ã‚¹ã‚’ä»˜ã‘ã‚‹ã€1ï½31ã®æ—¥
+	 * %K å’Œåæ›œæ—¥
+	 * %k å…­æ›œç•ªå·
+	 * %6 å…­æ›œ
+	 * %K æ›œæ—¥
+	 * %l ç¥æ—¥ç•ªå·
+	 * %L ç¥æ—¥
+	 * %o å¹²æ”¯ç•ªå·
+	 * %O å¹²æ”¯
+	 * %N 1ï½12ã®æœˆ
+	 * %E æ—§æš¦å¹´
+	 * %G æ—§æš¦ã®æœˆ
+	 * %F å¹´å·
+	 * %f å¹´å·ID
 	 * 
-	 * ¤¬»ÈÍÑ¤Ç¤­¤Ş¤¹¡£</pre>
+	 * ãŒä½¿ç”¨ã§ãã¾ã™ã€‚</pre>
 	 *
 	 * @since 1.1
-	 * @param string $format ¥Õ¥©¡¼¥Ş¥Ã¥È
-	 * @param integer $time_stamp ÊÑ´¹¤·¤¿¤¤¥¿¥¤¥à¥¹¥¿¥ó¥×(¥Ç¥Õ¥©¥ë¥È¤Ï¸½ºß¤Î¥í¥±¡¼¥ë»ş´Ö)
-	 * @param boolean $luna µìÎñ¾ğÊó¤ò»ÈÍÑ¤¹¤ë¤«¤É¤¦¤«(false¤Ë¤¹¤ë¤È¡¢µìÎñ¾ğÊó¤ò¼èÆÀ¤·¤Ê¤¤Âå¤ï¤ê¤Ë¡¢¤è¤ê¡¢¹âÂ®¤ËÆ°ºî¤·¤Ş¤¹)
+	 * @param string $format ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @param integer $time_stamp å¤‰æ›ã—ãŸã„ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç¾åœ¨ã®ãƒ­ã‚±ãƒ¼ãƒ«æ™‚é–“)
+	 * @param boolean $luna æ—§æš¦æƒ…å ±ã‚’ä½¿ç”¨ã™ã‚‹ã‹ã©ã†ã‹(falseã«ã™ã‚‹ã¨ã€æ—§æš¦æƒ…å ±ã‚’å–å¾—ã—ãªã„ä»£ã‚ã‚Šã«ã€ã‚ˆã‚Šã€é«˜é€Ÿã«å‹•ä½œã—ã¾ã™)
 	 * @
 	 */
 	function mb_strftime($format, $time_stamp = false, $luna = true)
