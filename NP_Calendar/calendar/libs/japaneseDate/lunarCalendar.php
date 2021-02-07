@@ -51,7 +51,7 @@ class japaneseDate_lunarCalendar
 	 *
 	 * @void
 	 */
-	function japaneseDate_lunarCalendar()
+	function __construct()
 	{
 		$this->k = M_PI / 180;
 		$this->tdt = (gmmktime(0,0,0,1,1,2000) - mktime(0,0,0,1,1,2000)) / 86400;
