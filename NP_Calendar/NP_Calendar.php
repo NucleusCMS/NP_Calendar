@@ -160,9 +160,6 @@ class NP_Calendar extends NucleusPlugin
 
 		if ($last_month < 10) {
 			$last_month = "0" . $last_month;
-		} else {
-			$last_month >= 10;
-			$last_month = $last_month;
 		}
 
 		// get the next year-month
@@ -175,9 +172,6 @@ class NP_Calendar extends NucleusPlugin
 
 		if ($next_month < 10) {
 			$next_month = "0" . $next_month;
-		} else {
-			$next_month >= 10;
-			$next_month = $next_month;
 		}
 
 		$nolink = $this->getOption('JustCal');
@@ -187,9 +181,24 @@ class NP_Calendar extends NucleusPlugin
 			$days = array();
 			$timeNow = $blog->getCorrectTime();
 			if ($category != 0) {
-				$res = sql_query("SELECT DAYOFMONTH(itime) as day FROM {$tbl_item} WHERE icat={$category} and MONTH(itime)={$month} and YEAR(itime)={$year} and iblog={$blogid} and idraft=0 and UNIX_TIMESTAMP(itime)<{$timeNow} GROUP BY day");
+				$res = sql_query(sprintf(
+				    'SELECT DAYOFMONTH(itime) as day FROM %s WHERE icat=%s and MONTH(itime)=%s and YEAR(itime)=%s and iblog=%d and idraft=0 and UNIX_TIMESTAMP(itime)<%s GROUP BY day',
+                    $tbl_item,
+                    $category,
+                    $month,
+                    $year,
+                    $blogid,
+                    $timeNow
+                ));
 			} else {
-				$res = sql_query("SELECT DAYOFMONTH(itime) as day FROM {$tbl_item} WHERE MONTH(itime)={$month} and YEAR(itime)={$year} and iblog={$blogid} and idraft=0 and UNIX_TIMESTAMP(itime)<{$timeNow} GROUP BY day");
+				$res = sql_query(sprintf(
+				    'SELECT DAYOFMONTH(itime) as day FROM %s WHERE MONTH(itime)=%s and YEAR(itime)=%s and iblog=%s and idraft=0 and UNIX_TIMESTAMP(itime)<%s GROUP BY day',
+                    $tbl_item,
+                    $month,
+                    $year,
+                    $blogid,
+                    $timeNow
+                ));
 			}
 
 			while ($o = sql_fetch_object($res)) {
@@ -213,29 +222,27 @@ class NP_Calendar extends NucleusPlugin
 			}
 		}
 
-		$oldestdate = explode('-', quickquery("SELECT SUBSTR(itime,1,7) as result FROM {$tbl_item} WHERE iblog= {$blogid} AND idraft=0 ORDER BY itime ASC LIMIT 1"));
-		if (
-			$last_month < $oldestdate[1]
-			&& $year == $oldestdate[0]
-		)          $past = false;
-		else {
-			if (
-				$last_month > $oldestdate[1]
-				&& $last_year < $oldestdate[0]
-			)  $past = false;
-			else                              $past = true;
+		$oldestdate = explode('-', quickquery(sprintf(
+		    'SELECT SUBSTR(itime,1,7) as result FROM %s WHERE iblog= %s AND idraft=0 ORDER BY itime ASC LIMIT 1',
+            $tbl_item,
+            $blogid
+        )));
+		if ($last_month < $oldestdate[1] && $year == $oldestdate[0]) {
+            $past = false;
+        } else {
+			if ($last_month > $oldestdate[1] && $last_year < $oldestdate[0]) {
+                $past = false;
+            } else {
+                $past = true;
+            }
 		}
 
-		if ($nolink === "yes") {
-			$str = "<!-- calendar start -->\n";
-			$str .= '<table class="calendar" summary="' . $this->hsc($this->getOption('Summary')) . '">';
-			$str .= "<caption>\n";
-			$str .= strftime($time_format, $timestamp);
-			$str .= "</caption>\n";
-			$str .= '<tr class="calendardateheaders">' . "\n";
+        $str = "<!-- calendar start -->\n";
+        $str .= '<table class="calendar" summary="' . $this->hsc($this->getOption('Summary')) . '">';
+		if ($nolink === 'yes') {
+			$str .= "<caption>" . strftime($time_format, $timestamp) ."</caption>";
+			$str .= '<tr class="calendardateheaders">';
 		} else {
-			$str = "<!-- calendar start -->\n";
-			$str .= '<table class="calendar" summary="' . $this->hsc($this->getOption('Summary')) . '">';
 			$str .= "<caption>\n";
 			if ($past) {
 				$str .= '<a href="' . createArchiveLink($blogid, $last_year . '-' . $last_month) . '">' .  "{$prev}</a>\n";
@@ -262,7 +269,7 @@ class NP_Calendar extends NucleusPlugin
 			$daylabel = explode(',', $this->getOption('wday_array'));
 
 			foreach ($daylabel as $weekday) {
-				$str .= "<th>{$weekday}</th>";
+				$str .= "<th>" . $weekday . "</th>";
 			}
 			$str .= "</tr>\n";
 			$str .= '<tr>';
@@ -277,7 +284,9 @@ class NP_Calendar extends NucleusPlugin
 					$str .= '<td class="blank"><div>&nbsp;</div></td>';
 				}
 			} else {
-				if ($firstDay['wday'] == 0) $firstDay['wday'] = 7;
+				if ($firstDay['wday'] == 0) {
+                    $firstDay['wday'] = 7;
+                }
 
 				$wday = 1;
 				while ($wday < $firstDay['wday']) {
@@ -356,7 +365,6 @@ class NP_Calendar extends NucleusPlugin
             }
 			$days_array = explode(',', $days);
 			foreach ($days_array as $value) {
-				$needle = '@^' . date('m') . '@';
 				if (strpos($value, '01') === 0) {
 					$result[] = substr($value, 2);
 				}
