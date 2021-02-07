@@ -2,7 +2,7 @@
 // +----------------------------------------------------------------------+
 // |  Japanese Date                                                       |
 // +----------------------------------------------------------------------+
-// | PHP Version 4¡¦5                                                     |
+// | PHP Version 4ãƒ»5                                                     |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2002-2006 The Artisan Member                           |
 // +----------------------------------------------------------------------+
@@ -10,12 +10,12 @@
 // +----------------------------------------------------------------------+
 //
 /**
- * µìÎñÆüÉÕ¥¯¥é¥¹
+ * æ—§æš¦æ—¥ä»˜ã‚¯ãƒ©ã‚¹
  *
- * ¹âÌî±ÑÌÀ»á¤Ë¤è¤ë¡ÖµìÎñ·×»»¥µ¥ó¥×¥ë¥¹¥¯¥ê¥×¥È¡×¤ò»²¹Í¤Ë¤·¤Æ¤¤¤Ş¤¹¡£<br />
+ * é«˜é‡è‹±æ˜æ°ã«ã‚ˆã‚‹ã€Œæ—§æš¦è¨ˆç®—ã‚µãƒ³ãƒ—ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆã€ã‚’å‚è€ƒã«ã—ã¦ã„ã¾ã™ã€‚<br />
  * @link(http://www.vector.co.jp/soft/dos/personal/se016093.html)<br />
- * ¤ª¼ê¿ô¤Ç¤¹¤¬¡¢ºÆÇÛÉÛ¤´ÍøÍÑ¤Îºİ¤Ï¡¢¹âÌî±ÑÌÀ»á¤Î¡ÖµìÎñ·×»»¥µ¥ó¥×¥ë¥¹¥¯¥ê¥×¥È¡×¤òDL¤·¡¢
- * µ¬Äê¤Ë½¾¤Ã¤Æ¤¯¤À¤µ¤¤¡£<br />
+ * ãŠæ‰‹æ•°ã§ã™ãŒã€å†é…å¸ƒã”åˆ©ç”¨ã®éš›ã¯ã€é«˜é‡è‹±æ˜æ°ã®ã€Œæ—§æš¦è¨ˆç®—ã‚µãƒ³ãƒ—ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆã€ã‚’DLã—ã€
+ * è¦å®šã«å¾“ã£ã¦ãã ã•ã„ã€‚<br />
  * 
  * @package JapaneseDate
  * @version 1.6
@@ -25,7 +25,7 @@
 
 
 /**
- * µìÎñÄê¿ô
+ * æ—§æš¦å®šæ•°
  */
 define("JD_BEFORE_NIBUN", 90.0);
 define("JD_CHU", 30.0);
@@ -38,7 +38,7 @@ define("JD_KEY_ORDERED", 2);
 
 
 /**
- * µìÎñÆüÉÕ¥¯¥é¥¹
+ * æ—§æš¦æ—¥ä»˜ã‚¯ãƒ©ã‚¹
  *
  * @package JapaneseDate
  * @version 1.4
@@ -51,7 +51,7 @@ class japaneseDate_lunarCalendar
 	var $tdt;
 	
 	/**
-	 * ¥³¥ó¥¹¥È¥é¥¯¥¿
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 *
 	 * @void
 	 */
@@ -62,10 +62,10 @@ class japaneseDate_lunarCalendar
 	}
 	
 	/**
-	 * µìÎñ¥«¥ì¥ó¥À¡¼¼èÆÀ
+	 * æ—§æš¦ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼å–å¾—
 	 *
 	 *
-	 * @param int $time_stamp ¥æ¥Ë¥Ã¥¯¥¹¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ãƒ¦ãƒ‹ãƒƒã‚¯ã‚¹ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function getLunarCalendar($time_stamp)
 	{
@@ -79,10 +79,10 @@ class japaneseDate_lunarCalendar
 	}
 	
 	/**
-	 * ¥¿¥¤¥à¥¹¥¿¥ó¥×¤«¤é¥æ¥ê¥¦¥¹Îñ¤ò¼èÆÀ¤·¤Ş¤¹¡£
+	 * ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—ã‹ã‚‰ãƒ¦ãƒªã‚¦ã‚¹æš¦ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 *
 	 *
-	 * @param int $time_stamp ¥æ¥Ë¥Ã¥¯¥¹¥¿¥¤¥à¥¹¥¿¥ó¥×
+	 * @param int $time_stamp ãƒ¦ãƒ‹ãƒƒã‚¯ã‚¹ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—
 	 */
 	function time2JD($time_stamp)
 	{
@@ -97,11 +97,11 @@ class japaneseDate_lunarCalendar
 	}
 	
 	/**
-	 * µìÎñ¥«¥ì¥ó¥À¡¼¥ê¥¹¥È¤ò¼èÆÀ
+	 * æ—§æš¦ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ãƒªã‚¹ãƒˆã‚’å–å¾—
 	 *
 	 *
 	 * @param array $time_stamp_array
-	 * $param int $mode ¥Ç¡¼¥¿¼èÆÀ¥â¡¼¥É
+	 * $param int $mode ãƒ‡ãƒ¼ã‚¿å–å¾—ãƒ¢ãƒ¼ãƒ‰
 	 */
 	function getLunaCalendarList($time_array, $mode = JD_KEY_ORDERED)
 	{
@@ -127,14 +127,14 @@ class japaneseDate_lunarCalendar
 	}
 	
 	/**
-	 * mktime¤ÈÆ±¤¸¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤Ç¡¢µìÎñÊÑ´¹¤ò¹Ô¤¦
+	 * mktimeã¨åŒã˜ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã§ã€æ—§æš¦å¤‰æ›ã‚’è¡Œã†
 	 *
-	 * @param int $hour »ş
-	 * @param int $minute Ê¬
-	 * @param int $second ÉÃ
-	 * @param int $month ·î
-	 * @param int $day Æü
-	 * @param int $year Ç¯
+	 * @param int $hour æ™‚
+	 * @param int $minute åˆ†
+	 * @param int $second ç§’
+	 * @param int $month æœˆ
+	 * @param int $day æ—¥
+	 * @param int $year å¹´
 	 * @return array
 	 */
 	function getLunarCalendarByMktime($hour, $minute, $second, $month, $day, $year)
@@ -145,16 +145,16 @@ class japaneseDate_lunarCalendar
 	}
 	
 	/**
-	 * ºó¤Î°ìÍ÷¼èÆÀ
+	 * æœ”ã®ä¸€è¦§å–å¾—
 	 *
 	 * @return array
 	 */
 	function getTuitachiList($tm0, $lim)
 	{
-		// ·×»»ÂĞ¾İ¤ÎÄ¾Á°¤Ë¤¢¤¿¤ëÆóÊ¬Æó»ê¤Î»ş¹ï¤òµá¤á¤ë
+		// è¨ˆç®—å¯¾è±¡ã®ç›´å‰ã«ã‚ãŸã‚‹äºŒåˆ†äºŒè‡³ã®æ™‚åˆ»ã‚’æ±‚ã‚ã‚‹
 		list($nibun[0][0], $nibun[0][1]) = $this->getChu($tm0, JD_BEFORE_NIBUN);
 		
-		// ·×»»ÂĞ¾İ¤ÎÄ¾Á°¤Ë¤¢¤¿¤ëÆóÊ¬Æó»ê¤ÎÄ¾Á°¤Îºó¤Î»ş¹ï¤òµá¤á¤ë
+		// è¨ˆç®—å¯¾è±¡ã®ç›´å‰ã«ã‚ãŸã‚‹äºŒåˆ†äºŒè‡³ã®ç›´å‰ã®æœ”ã®æ™‚åˆ»ã‚’æ±‚ã‚ã‚‹
 		$tuitachi[0] = $this->getTuitachi($nibun[0][0]);
 		if ($nibun[0][1] % 30) {
 			list($chu[0][0], $chu[0][1]) = $this->getChu($nibun[0][0]);
@@ -162,31 +162,31 @@ class japaneseDate_lunarCalendar
 			$chu[0] = $nibun[0];
 		}
 		
-		// Ãæµ¤¤Î»ş¹ï¤ò·×»»
+		// ä¸­æ°—ã®æ™‚åˆ»ã‚’è¨ˆç®—
 		for ($i = 1; $i <= $lim ; $i++) {
 			list($chu[$i][0], $chu[$i][1]) = $this->getChu($chu[$i - 1][0] + 32.0);
 		}
 		
-		// ºó¤Î»ş¹ï¤òµá¤á¤ë
+		// æœ”ã®æ™‚åˆ»ã‚’æ±‚ã‚ã‚‹
 		for ($i = 1; $i <= $lim; $i++) {
 			$tm = $tuitachi[$i - 1];
 			$tm += 30.0;
 			$tuitachi[$i] = $this->getTuitachi($tm);
-			// Á°¤ÈÆ±¤¸»ş¹ï¤ò·×»»¤·¤¿¾ì¹ç¡ÊÎ¾¼Ô¤Îº¹¤¬26Æü°ÊÆâ¡Ë¤Ë¤Ï¡¢½é´üÃÍ¤ò
-			// +35Æü¤Ë¤·¤ÆºÆ¼Â¹Ô¤µ¤»¤ë¡£
+			// å‰ã¨åŒã˜æ™‚åˆ»ã‚’è¨ˆç®—ã—ãŸå ´åˆï¼ˆä¸¡è€…ã®å·®ãŒ26æ—¥ä»¥å†…ï¼‰ã«ã¯ã€åˆæœŸå€¤ã‚’
+			// +35æ—¥ã«ã—ã¦å†å®Ÿè¡Œã•ã›ã‚‹ã€‚
 			if (abs($this->flce($tuitachi[$i - 1]) - $this->flce($tuitachi[$i])) <= 26.0) {
 				$tuitachi[$i] = $this->getTuitachi($tuitachi[$i - 1] + 35.0);
 			}
 		}
 
 		if ($this->flce($tuitachi[1]) <= $this->flce($nibun[0][0])) {
-			// ÆóÊ¬Æó»ê¤Î»ş¹ï°ÊÁ°¤Ë¤Ê¤Ã¤Æ¤·¤Ş¤Ã¤¿¾ì¹ç¤Ë¤Ï¡¢ºó¤Î»ş¹ï¤ò·«¤ê²¼¤²¤Æ½¤Àµ¤¹¤ë¡£
+			// äºŒåˆ†äºŒè‡³ã®æ™‚åˆ»ä»¥å‰ã«ãªã£ã¦ã—ã¾ã£ãŸå ´åˆã«ã¯ã€æœ”ã®æ™‚åˆ»ã‚’ç¹°ã‚Šä¸‹ã’ã¦ä¿®æ­£ã™ã‚‹ã€‚
 			for ($i = 0; $i < $lim; $i++) {
 				$tuitachi[$i] = $tuitachi[$i + 1];
 			}
 			$tuitachi[4] = $this->getTuitachi($tuitachi[3] + 35.0);
  		} elseif ($this->flce($tuitachi[0]) > $this->flce($nibun[0][0])) {
-			// ÆóÊ¬Æó»ê¤Î»ş¹ï°Ê¸å¤Ë¤Ê¤Ã¤Æ¤·¤Ş¤Ã¤¿¾ì¹ç¡¢ºó¤Î»ş¹ï¤ò·«¤ê¾å¤²¤Æ½¤Àµ¤¹¤ë¡£
+			// äºŒåˆ†äºŒè‡³ã®æ™‚åˆ»ä»¥å¾Œã«ãªã£ã¦ã—ã¾ã£ãŸå ´åˆã€æœ”ã®æ™‚åˆ»ã‚’ç¹°ã‚Šä¸Šã’ã¦ä¿®æ­£ã™ã‚‹ã€‚
  			for ($i = 4 ; $i > 0; $i--) {
 				$tuitachi[$i] = $tuitachi[$i - 1];
 			}
@@ -194,7 +194,7 @@ class japaneseDate_lunarCalendar
 		}
 		
 		
-		// ±¼·î¥«¥¦¥ó¥È
+		// é–æœˆã‚«ã‚¦ãƒ³ãƒˆ
 		$uruu_count = 0;
 		foreach ($tuitachi as $key => $value) {
 			$res[$key]["jd"]    = $this->flce($value);
@@ -237,9 +237,9 @@ class japaneseDate_lunarCalendar
 	}
 	
 	/**
-	 * ºóÇÛÎó¤«¤éµìÎñ¤òµá¤á¤ë¡£
+	 * æœ”é…åˆ—ã‹ã‚‰æ—§æš¦ã‚’æ±‚ã‚ã‚‹ã€‚
 	 *
-	 * @param array $m ºóÇÛÎó
+	 * @param array $m æœ”é…åˆ—
 	 */
 	function getCalendarByTList($tm0, $m)
 	{
@@ -260,7 +260,7 @@ class japaneseDate_lunarCalendar
 		
 		$kyureki = $m[$i];
 		
-		// µìÎñÇ¯¤Î·×»»
+		// æ—§æš¦å¹´ã®è¨ˆç®—
 		$gc = $this->JD2DateArray($tm0);
 		$kyureki["year"] = $gc[0];
 		if ($kyureki["month"] > 9 && $kyureki["month"] > $gc[1]) {
@@ -270,7 +270,7 @@ class japaneseDate_lunarCalendar
 		$kyureki["day"]=$this->flce($tm0)-$this->flce($m[$i]["jd"]) + 1;
 		$kyureki["time_stamp"] = mktime(0, 0, 0, $kyureki["month"], $kyureki["day"], $kyureki["year"]);
 
-		// ·îÎğ¤òµá¤á¤ë
+		// æœˆé½¢ã‚’æ±‚ã‚ã‚‹
 		$kyureki["mage"] = $tm0 - $m[$i]["jd"];
 		if($kyureki["mage"] < 0) {
 			$kyureki["mage"] = $tm0 - $m[$i - 1]["jd"];
@@ -279,29 +279,29 @@ class japaneseDate_lunarCalendar
 		if($kyureki["magenoon"] < 0) {
 			$kyureki["magenoon"] = $this->flce($tm0) + .5 - $m[$i - 1]["jd"];
 		}
-		// µ±ÌÌÈæ¤òµá¤á¤ë
+		// è¼é¢æ¯”ã‚’æ±‚ã‚ã‚‹
 		$tm1 = $this->flce($tm0);
 		$tm2 = $tm0 - $tm1;
-		// JST ==> DT ¡ÊÊäÀµ»ş¹ï=0.0sec ¤È²¾Äê¤·¤Æ·×»»¡Ë
+		// JST ==> DT ï¼ˆè£œæ­£æ™‚åˆ»=0.0sec ã¨ä»®å®šã—ã¦è¨ˆç®—ï¼‰
 		$tm2-=$this->tdt;
 		$t = ($tm2 + 0.5) / 36525.0;
 		$t = $t + ($tm1-2451545.0) / 36525.0;
 		$kyureki["illumi"] = (1 - cos($this->k * $this->angleNormalize($this->celestialLongitudeOfTheMoon($t) - $this->celestialLongitudeOfTheSun($t)))) * 50;
 		
-		// ·îÁê¤òµá¤á¤ë¡Êµ±ÌÌÈæ¤Î·×»»¤Çµá¤á¤¿ÊÑ¿ô t ¤ò»ÈÍÑ¡Ë
+		// æœˆç›¸ã‚’æ±‚ã‚ã‚‹ï¼ˆè¼é¢æ¯”ã®è¨ˆç®—ã§æ±‚ã‚ãŸå¤‰æ•° t ã‚’ä½¿ç”¨ï¼‰
 		$kyureki["mphase"] = $this->flce($this->angleNormalize($this->celestialLongitudeOfTheMoon($t) - $this->celestialLongitudeOfTheSun($t)) / 360 * 28 + .5);
 		if($kyureki["mphase"] == 28) {
 			$kyureki["mphase"] = 0;
 		}
 		
-		// ºó
+		// æœ”
 		$kyureki["tuitachi_jd"] = $m[$i]["jd"];
 		
-		// ¥æ¥ê¥¦¥¹Îñ
+		// ãƒ¦ãƒªã‚¦ã‚¹æš¦
 		$kyureki["jd"] = $tm0;
 		$kyureki["chuki"][0] = $this->flce($kyureki["chuki"][0]);
 		
-		// Ãæµ¤¤«¤É¤¦¤«
+		// ä¸­æ°—ã‹ã©ã†ã‹
 		if ($kyureki["chuki"][0] && $kyureki["chuki"][0] == $kyureki["jd"]) {
 			$kyureki["is_chuki"] = $kyureki["chuki"][1];
 		} else {
@@ -317,39 +317,39 @@ class japaneseDate_lunarCalendar
 
 	function getChu($tm, $longitude = JD_CHU)
 	{
-		// »ş¹ï°ú¿ô¤òÊ¬²ò¤¹¤ë
+		// æ™‚åˆ»å¼•æ•°ã‚’åˆ†è§£ã™ã‚‹
 		$tm1 = $this->flce($tm);
 		$tm2 = $tm - $tm1;
-		// JST ==> DT ¡ÊÊäÀµ»ş¹ï=0.0sec ¤È²¾Äê¤·¤Æ·×»»¡Ë
+		// JST ==> DT ï¼ˆè£œæ­£æ™‚åˆ»=0.0sec ã¨ä»®å®šã—ã¦è¨ˆç®—ï¼‰
 		$tm2 -= $this->tdt;
-		// Ãæµ¤¤Î²«·Ğ Tsun0 ¤òµá¤á¤ë
+		// ä¸­æ°—ã®é»„çµŒ Tsun0 ã‚’æ±‚ã‚ã‚‹
 		$t = ($tm2 + 0.5) / 36525.0;
 		$t = $t + ($tm1 - 2451545.0) / 36525.0;
 		$rm_sun  = $this->celestialLongitudeOfTheSun($t);
 		$rm_sun0 = $longitude * $this->flce($rm_sun / $longitude);
-		// ·«¤êÊÖ¤··×»»¤Ë¤è¤Ã¤ÆÃæµ¤¤Î»ş¹ï¤ò·×»»¤¹¤ë
-		// ¡Ê¸íº¹¤¬¡Ş1.0 sec°ÊÆâ¤Ë¤Ê¤Ã¤¿¤éÂÇ¤ÁÀÚ¤ë¡£¡Ë
+		// ç¹°ã‚Šè¿”ã—è¨ˆç®—ã«ã‚ˆã£ã¦ä¸­æ°—ã®æ™‚åˆ»ã‚’è¨ˆç®—ã™ã‚‹
+		// ï¼ˆèª¤å·®ãŒÂ±1.0 secä»¥å†…ã«ãªã£ãŸã‚‰æ‰“ã¡åˆ‡ã‚‹ã€‚ï¼‰
 		$delta_t1 = 0;
 		$delta_t2 = 1.0;
 		for (; abs($delta_t1 + $delta_t2) > (1.0 / 86400.0) ;) {
-		// Tsun ¤ò·×»»
+		// Tsun ã‚’è¨ˆç®—
 			$t = ($tm2 + 0.5) / 36525.0;
 			$t =$t + ($tm1-2451545.0) / 36525.0;
 			$rm_sun=$this->celestialLongitudeOfTheSun($t);
-		// ²«·Ğº¹ ¢¤T=Tsun -Tsun0
+		// é»„çµŒå·® â–³T=Tsun -Tsun0
 			$delta_rm = $rm_sun - $rm_sun0 ;
-		// ¢¤T¤Î°ú¤­¹ş¤ßÈÏ°Ï¡Ê¡Ş180¡ë¡Ë¤ò°ïÃ¦¤·¤¿¾ì¹ç¤Ë¤Ï¡¢ÊäÀµ¤ò¹Ô¤¦
+		// â–³Tã®å¼•ãè¾¼ã¿ç¯„å›²ï¼ˆÂ±180Â°ï¼‰ã‚’é€¸è„±ã—ãŸå ´åˆã«ã¯ã€è£œæ­£ã‚’è¡Œã†
 			if ($delta_rm > 180.0) {
 				$delta_rm -= 360.0;
 			} elseif ($delta_rm < -180.0) {
 				$delta_rm += 360.0;
 			}
-		// »ş¹ï°ú¿ô¤ÎÊäÀµÃÍ ¢¤t
+		// æ™‚åˆ»å¼•æ•°ã®è£œæ­£å€¤ â–³t
 		// delta_t = delta_rm * 365.2 / 360.0;
 			$delta_t1 = $this->flce($delta_rm * 365.2 / 360.0);
 			$delta_t2 = $delta_rm * 365.2 / 360.0;
 			$delta_t2 -= $delta_t1;
-		// »ş¹ï°ú¿ô¤ÎÊäÀµ
+		// æ™‚åˆ»å¼•æ•°ã®è£œæ­£
 		// tm -= delta_t;
 			$tm1 = $tm1 - $delta_t1;
 			$tm2 = $tm2 - $delta_t2;
@@ -358,10 +358,10 @@ class japaneseDate_lunarCalendar
 				$tm1 -= 1.0;
 			}
 		}
-		// Ìá¤êÃÍ¤ÎºîÀ®
-		// chu[i, 0]:»ş¹ï°ú¿ô¤ò¹çÀ®¤¹¤ë¤Î¤È¡¢DT ==> JST ÊÑ´¹¤ò¹Ô¤¤¡¢Ìá¤êÃÍ¤È¤¹¤ë
-		// ¡ÊÊäÀµ»ş¹ï=0.0sec ¤È²¾Äê¤·¤Æ·×»»¡Ë
-		// chu[i, 1]:²«·Ğ
+		// æˆ»ã‚Šå€¤ã®ä½œæˆ
+		// chu[i, 0]:æ™‚åˆ»å¼•æ•°ã‚’åˆæˆã™ã‚‹ã®ã¨ã€DT ==> JST å¤‰æ›ã‚’è¡Œã„ã€æˆ»ã‚Šå€¤ã¨ã™ã‚‹
+		// ï¼ˆè£œæ­£æ™‚åˆ»=0.0sec ã¨ä»®å®šã—ã¦è¨ˆç®—ï¼‰
+		// chu[i, 1]:é»„çµŒ
 		$temp[0] = $tm2 + $this->tdt;
 		$temp[0] += $tm1;
 		$temp[1] = $rm_sun0;
@@ -373,46 +373,46 @@ class japaneseDate_lunarCalendar
 
 	function getTuitachi($tm)
 	{
-		// ¥ë¡¼¥×¥«¥¦¥ó¥¿¤Î¥»¥Ã¥È
+		// ãƒ«ãƒ¼ãƒ—ã‚«ã‚¦ãƒ³ã‚¿ã®ã‚»ãƒƒãƒˆ
 		$lc=1;
-		// »ş¹ï°ú¿ô¤òÊ¬²ò¤¹¤ë
+		// æ™‚åˆ»å¼•æ•°ã‚’åˆ†è§£ã™ã‚‹
 		$tm1 = $this->flce($tm);
 		$tm2 = $tm - $tm1;
-		// JST ==> DT ¡ÊÊäÀµ»ş¹ï=0.0sec ¤È²¾Äê¤·¤Æ·×»»¡Ë
+		// JST ==> DT ï¼ˆè£œæ­£æ™‚åˆ»=0.0sec ã¨ä»®å®šã—ã¦è¨ˆç®—ï¼‰
 		$tm2 -= $this->tdt;
-		// ·«¤êÊÖ¤··×»»¤Ë¤è¤Ã¤Æºó¤Î»ş¹ï¤ò·×»»¤¹¤ë
-		// ¡Ê¸íº¹¤¬¡Ş1.0 sec°ÊÆâ¤Ë¤Ê¤Ã¤¿¤éÂÇ¤ÁÀÚ¤ë¡£¡Ë
+		// ç¹°ã‚Šè¿”ã—è¨ˆç®—ã«ã‚ˆã£ã¦æœ”ã®æ™‚åˆ»ã‚’è¨ˆç®—ã™ã‚‹
+		// ï¼ˆèª¤å·®ãŒÂ±1.0 secä»¥å†…ã«ãªã£ãŸã‚‰æ‰“ã¡åˆ‡ã‚‹ã€‚ï¼‰
 		$delta_t1 = 0;
 		$delta_t2 = 1.0;
 		for (; abs($delta_t1 + $delta_t2) > (1.0 / 86400.0) ; $lc++) {
-		// ÂÀÍÛ¤Î²«·ĞTsun , ·î¤Î²«·ĞTmoon ¤ò·×»»
+		// å¤ªé™½ã®é»„çµŒTsun , æœˆã®é»„çµŒTmoon ã‚’è¨ˆç®—
 		// t = (tm - 2451548.0 + 0.5)/36525.0;
 			$t = ($tm2 + 0.5) / 36525.0;
 			$t = $t + ($tm1-2451545.0) / 36525.0;
 			$rm_sun = $this->celestialLongitudeOfTheSun($t);
 			$rm_moon = $this->celestialLongitudeOfTheMoon($t);
-		// ·î¤ÈÂÀÍÛ¤Î²«·Ğº¹¢¤T
-		// ¢¤T=Tmoon-Tsun
+		// æœˆã¨å¤ªé™½ã®é»„çµŒå·®â–³T
+		// â–³T=Tmoon-Tsun
 			$delta_rm = $rm_moon - $rm_sun ;
-		// ¥ë¡¼¥×¤Î£±²óÌÜ¡Êlc=1¡Ë¤Ç delta_rm < 0.0 ¤Î¾ì¹ç¤Ë¤Ï°ú¤­¹ş¤ßÈÏ°Ï¤Ë
-		// Æş¤ë¤è¤¦¤ËÊäÀµ¤¹¤ë
+		// ãƒ«ãƒ¼ãƒ—ã®ï¼‘å›ç›®ï¼ˆlc=1ï¼‰ã§ delta_rm < 0.0 ã®å ´åˆã«ã¯å¼•ãè¾¼ã¿ç¯„å›²ã«
+		// å…¥ã‚‹ã‚ˆã†ã«è£œæ­£ã™ã‚‹
 			if ($lc == 1 && $delta_rm < 0.0) {
 				$delta_rm = $this->angleNormalize($delta_rm);
 			} elseif ($rm_sun >= 0 && $rm_sun <= 20 && $rm_moon >= 300) {
-				// ½ÕÊ¬¤Î¶á¤¯¤Çºó¤¬¤¢¤ë¾ì¹ç¡Ê0 ¡åTsun¡å 20¡Ë¤Ç¡¢·î¤Î²«·ĞTmoon¡æ300 ¤Î
-				// ¾ì¹ç¤Ë¤Ï¡¢¢¤T= 360.0 - ¢¤T ¤È·×»»¤·¤ÆÊäÀµ¤¹¤ë
+				// æ˜¥åˆ†ã®è¿‘ãã§æœ”ãŒã‚ã‚‹å ´åˆï¼ˆ0 â‰¦Tsunâ‰¦ 20ï¼‰ã§ã€æœˆã®é»„çµŒTmoonâ‰§300 ã®
+				// å ´åˆã«ã¯ã€â–³T= 360.0 - â–³T ã¨è¨ˆç®—ã—ã¦è£œæ­£ã™ã‚‹
 				$delta_rm = $this->angleNormalize($delta_rm);
 				$delta_rm = 360.0 - $delta_rm;
 			} elseif (abs($delta_rm) > 40.0) {
-				// ¢¤T¤Î°ú¤­¹ş¤ßÈÏ°Ï¡Ê¡Ş40¡ë¡Ë¤ò°ïÃ¦¤·¤¿¾ì¹ç¤Ë¤Ï¡¢ÊäÀµ¤ò¹Ô¤¦
+				// â–³Tã®å¼•ãè¾¼ã¿ç¯„å›²ï¼ˆÂ±40Â°ï¼‰ã‚’é€¸è„±ã—ãŸå ´åˆã«ã¯ã€è£œæ­£ã‚’è¡Œã†
 				$delta_rm = $this->angleNormalize($delta_rm);
 			}
-			// »ş¹ï°ú¿ô¤ÎÊäÀµÃÍ ¢¤t
+			// æ™‚åˆ»å¼•æ•°ã®è£œæ­£å€¤ â–³t
 			// delta_t = delta_rm * 29.530589 / 360.0;
 			$delta_t1 = $this->flce($delta_rm * 29.530589 / 360.0);
 			$delta_t2 = $delta_rm * 29.530589 / 360.0;
 			$delta_t2 -= $delta_t1;
-			// »ş¹ï°ú¿ô¤ÎÊäÀµ
+			// æ™‚åˆ»å¼•æ•°ã®è£œæ­£
 			// tm -= delta_t;
 			$tm1 = $tm1 - $delta_t1;
 			$tm2 = $tm2 - $delta_t2;
@@ -421,27 +421,27 @@ class japaneseDate_lunarCalendar
 			}
 			
 			if ($lc == 15 && abs($delta_t1 + $delta_t2) > (1.0 / 86400.0)) {
-				// ¥ë¡¼¥×²ó¿ô¤¬15²ó¤Ë¤Ê¤Ã¤¿¤é¡¢½é´üÃÍ tm ¤ò tm-26 ¤È¤¹¤ë¡£
+				// ãƒ«ãƒ¼ãƒ—å›æ•°ãŒ15å›ã«ãªã£ãŸã‚‰ã€åˆæœŸå€¤ tm ã‚’ tm-26 ã¨ã™ã‚‹ã€‚
 				$tm1 = $this->flce($tm-26);
 				$tm2 = 0;
 			} elseif ($lc > 30 && abs($delta_t1 + $delta_t2) > (1.0 / 86400.0)) {
-				// ½é´üÃÍ¤òÊäÀµ¤·¤¿¤Ë¤â´Ø¤ï¤é¤º¡¢¿¶Æ°¤òÂ³¤±¤ë¾ì¹ç¤Ë¤Ï½é´üÃÍ¤òÅú¤¨¤È¤·¤Æ
-				// ÊÖ¤·¤Æ¶¯À©Åª¤Ë¥ë¡¼¥×¤òÈ´¤±½Ğ¤·¤Æ°Û¾ï½ªÎ»¤µ¤»¤ë¡£
+				// åˆæœŸå€¤ã‚’è£œæ­£ã—ãŸã«ã‚‚é–¢ã‚ã‚‰ãšã€æŒ¯å‹•ã‚’ç¶šã‘ã‚‹å ´åˆã«ã¯åˆæœŸå€¤ã‚’ç­”ãˆã¨ã—ã¦
+				// è¿”ã—ã¦å¼·åˆ¶çš„ã«ãƒ«ãƒ¼ãƒ—ã‚’æŠœã‘å‡ºã—ã¦ç•°å¸¸çµ‚äº†ã•ã›ã‚‹ã€‚
 				$tm1 = $tm;
 				$tm2 = 0;
 				break;
 			}
 		}
-		// »ş¹ï°ú¿ô¤ò¹çÀ®¤¹¤ë¤Î¤È¡¢DT ==> JST ÊÑ´¹¤ò¹Ô¤¤¡¢Ìá¤êÃÍ¤È¤¹¤ë
-		// ¡ÊÊäÀµ»ş¹ï=0.0sec ¤È²¾Äê¤·¤Æ·×»»¡Ë
+		// æ™‚åˆ»å¼•æ•°ã‚’åˆæˆã™ã‚‹ã®ã¨ã€DT ==> JST å¤‰æ›ã‚’è¡Œã„ã€æˆ»ã‚Šå€¤ã¨ã™ã‚‹
+		// ï¼ˆè£œæ­£æ™‚åˆ»=0.0sec ã¨ä»®å®šã—ã¦è¨ˆç®—ï¼‰
 		return($tm2 + $tm1 + $this->tdt);
 	}
 
 
 	/**
-	 * ³ÑÅÙÀµµ¬²½
-	 * @param float $angle ³ÑÅÙ
-	 * @return float ³ÑÅÙ
+	 * è§’åº¦æ­£è¦åŒ–
+	 * @param float $angle è§’åº¦
+	 * @return float è§’åº¦
 	 */
 	function angleNormalize($angle)
 	{
@@ -491,7 +491,7 @@ class japaneseDate_lunarCalendar
 		$ang = $this->angleNormalize(35999.05 * $t + 267.52);
 		$th  = $th - 0.0048 * $t * cos($this->k * $ang) ;
 		$th  = $th + 1.9147 * cos($this->k * $ang) ;
-		// ÈæÎã¹à¤Î·×»»
+		// æ¯”ä¾‹é …ã®è¨ˆç®—
 		$ang = $this->angleNormalize(36000.7695 * $t);
 		$ang = $this->angleNormalize($ang + 280.4659);
 		$th  = $this->angleNormalize($th + $ang);
@@ -501,7 +501,7 @@ class japaneseDate_lunarCalendar
 	function celestialLongitudeOfTheMoon($t)
 	{
 		
-		// ÀİÆ°¹à¤Î·×»»
+		// æ‘‚å‹•é …ã®è¨ˆç®—
 		$ang = $this->angleNormalize(2322131.0 * $t + 191.0);
 		$th  = 0.0003 * cos($this->k * $ang);
 		$ang = $this->angleNormalize(4067.0 * $t + 70.0);
@@ -624,7 +624,7 @@ class japaneseDate_lunarCalendar
 		$th  = $th + 1.2740 * cos($this->k * $ang);
 		$ang = $this->angleNormalize(477198.868 * $t + 44.963); 
 		$th  = $th + 6.2888 * cos($this->k * $ang);
-		// ÈæÎã¹à¤Î·×»»
+		// æ¯”ä¾‹é …ã®è¨ˆç®—
 		$ang = $this->angleNormalize(481267.8809 * $t);
 		$ang = $this->angleNormalize($ang + 218.3162);
 		$th  = $this->angleNormalize($th + $ang);
@@ -663,7 +663,7 @@ class japaneseDate_lunarCalendar
 		$res[2] = $x4 - $this->flce(30.59 * $x5);
 		$res[1] = $x5 - 12 * $x6 + 2;
 		$res[0] = 100 * ($x1 - 49) + $x3 + $x6;
-		// 2·î30Æü¤ÎÊäÀµ
+		// 2æœˆ30æ—¥ã®è£œæ­£
 		if ($res[1]==2 && $res[2] > 28) {
 			if ($res[0] % 100 == 0 && $res[0] % 400 == 0) {
 				$res[2] = 29;
