@@ -21,7 +21,7 @@
 /**
  * 旧暦クラス名
  */
-define("JD_LC_CLASS_NAME", "japaneseDate_lunarCalendar");
+const JD_LC_CLASS_NAME = 'japaneseDate_lunarCalendar';
 
 /**
  * 旧暦クラスパス
@@ -31,45 +31,45 @@ define("JD_LC_CLASS_PATH", dirname(__FILE__).DIRECTORY_SEPARATOR."lunarCalendar.
 /**
  * 祝日定数
  */
-define("JD_NO_HOLIDAY", 0);
-define("JD_NEW_YEAR_S_DAY", 1);
-define("JD_COMING_OF_AGE_DAY", 2);
-define("JD_NATIONAL_FOUNDATION_DAY", 3);
-define("JD_THE_SHOWA_EMPEROR_DIED", 4);
-define("JD_VERNAL_EQUINOX_DAY", 5);
-define("JD_DAY_OF_SHOWA", 6);
-define("JD_GREENERY_DAY", 7);
-define("JD_THE_EMPEROR_S_BIRTHDAY", 8);
-define("JD_CROWN_PRINCE_HIROHITO_WEDDING", 9);
-define("JD_CONSTITUTION_DAY", 10);
-define("JD_NATIONAL_HOLIDAY", 11);
-define("JD_CHILDREN_S_DAY", 12);
-define("JD_COMPENSATING_HOLIDAY", 13);
-define("JD_CROWN_PRINCE_NARUHITO_WEDDING", 14);
-define("JD_MARINE_DAY", 15);
-define("JD_AUTUMNAL_EQUINOX_DAY", 16);
-define("JD_RESPECT_FOR_SENIOR_CITIZENS_DAY", 17);
-define("JD_SPORTS_DAY", 18);
-define("JD_CULTURE_DAY", 19);
-define("JD_LABOR_THANKSGIVING_DAY", 20);
-define("JD_REGNAL_DAY", 21);
+const JD_NO_HOLIDAY = 0;
+const JD_NEW_YEAR_S_DAY = 1;
+const JD_COMING_OF_AGE_DAY = 2;
+const JD_NATIONAL_FOUNDATION_DAY = 3;
+const JD_THE_SHOWA_EMPEROR_DIED = 4;
+const JD_VERNAL_EQUINOX_DAY = 5;
+const JD_DAY_OF_SHOWA = 6;
+const JD_GREENERY_DAY = 7;
+const JD_THE_EMPEROR_S_BIRTHDAY = 8;
+const JD_CROWN_PRINCE_HIROHITO_WEDDING = 9;
+const JD_CONSTITUTION_DAY = 10;
+const JD_NATIONAL_HOLIDAY = 11;
+const JD_CHILDREN_S_DAY = 12;
+const JD_COMPENSATING_HOLIDAY = 13;
+const JD_CROWN_PRINCE_NARUHITO_WEDDING = 14;
+const JD_MARINE_DAY = 15;
+const JD_AUTUMNAL_EQUINOX_DAY = 16;
+const JD_RESPECT_FOR_SENIOR_CITIZENS_DAY = 17;
+const JD_SPORTS_DAY = 18;
+const JD_CULTURE_DAY = 19;
+const JD_LABOR_THANKSGIVING_DAY = 20;
+const JD_REGNAL_DAY = 21;
 
 /**
  * 特定月定数
  */
-define("JD_VERNAL_EQUINOX_DAY_MONTH", 3);
-define("JD_AUTUMNAL_EQUINOX_DAY_MONTH", 9);
+const JD_VERNAL_EQUINOX_DAY_MONTH = 3;
+const JD_AUTUMNAL_EQUINOX_DAY_MONTH = 9;
 
 /**
  * 曜日定数
  */
-define("JD_SUNDAY",    0);
-define("JD_MONDAY",    1);
-define("JD_TUESDAY",   2);
-define("JD_WEDNESDAY", 3);
-define("JD_THURSDAY",  4);
-define("JD_FRIDAY",    5);
-define("JD_SATURDAY",  6);
+const JD_SUNDAY = 0;
+const JD_MONDAY = 1;
+const JD_TUESDAY = 2;
+const JD_WEDNESDAY = 3;
+const JD_THURSDAY = 4;
+const JD_FRIDAY = 5;
+const JD_SATURDAY = 6;
 
 
 /**
@@ -92,41 +92,41 @@ class japaneseDate
 	 * @access private
 	 */
 	var $_holiday_name = array(
-		0 => "", 
-		1 => "元旦",
-		2 => "成人の日",
-		3 => "建国記念の日",
-		4 => "昭和天皇の大喪の礼",
-		5 => "春分の日",
-		6 => "昭和の日",
-		7 => "みどりの日",
-		8 => "天皇誕生日",
-		9 => "皇太子明仁親王の結婚の儀",
-		10 => "憲法記念日",
-		11 => "国民の休日",
-		12 => "こどもの日",
-		13 => "振替休日",
-		14 => "皇太子徳仁親王の結婚の儀",
-		15 => "海の日",
-		16 => "秋分の日",
-		17 => "敬老の日",
-		18 => "体育の日",
-		19 => "文化の日",
-		20 => "勤労感謝の日",
-		21 => "即位礼正殿の儀",
+		0 => '',
+		1 => '元旦',
+		2 => '成人の日',
+		3 => '建国記念の日',
+		4 => '昭和天皇の大喪の礼',
+		5 => '春分の日',
+		6 => '昭和の日',
+		7 => 'みどりの日',
+		8 => '天皇誕生日',
+		9 => '皇太子明仁親王の結婚の儀',
+		10 => '憲法記念日',
+		11 => '国民の休日',
+		12 => 'こどもの日',
+		13 => '振替休日',
+		14 => '皇太子徳仁親王の結婚の儀',
+		15 => '海の日',
+		16 => '秋分の日',
+		17 => '敬老の日',
+		18 => '体育の日',
+		19 => '文化の日',
+		20 => '勤労感謝の日',
+		21 => '即位礼正殿の儀',
 	);
 	
-	var $_weekday_name = array("日", "月", "火", "水", "木", "金", "土");
+	var $_weekday_name = array('日', '月', '火', '水', '木', '金', '土');
 	
-	var $_during_the_war_period_weekday_name = array("月", "月", "火", "水", "木", "金", "金");
+	var $_during_the_war_period_weekday_name = array('月', '月', '火', '水', '木', '金', '金');
 	
-	var $_month_name = array("", "睦月", "如月", "弥生", "卯月", "皐月", "水無月", "文月", "葉月", "長月", "神無月", "霜月", "師走");
+	var $_month_name = array('', '睦月', '如月', '弥生', '卯月', '皐月', '水無月', '文月', '葉月', '長月', '神無月', '霜月', '師走');
 	
-	var $_six_weekday = array("大安", "赤口", "先勝", "友引", "先負", "仏滅");
+	var $_six_weekday = array('大安', '赤口', '先勝', '友引', '先負', '仏滅');
 	
-	var $_oriental_zodiac = array("亥", "子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌",);
+	var $_oriental_zodiac = array('亥', '子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌',);
 	
-	var $_era_name = array("昭和", "平成");
+	var $_era_name = array('昭和', '平成');
 	
 	var $_era_calc = array(1925, 1988);
 	
@@ -184,6 +184,7 @@ class japaneseDate
 			case 12:
 			return $this->getDecemberHoliday($this->getYear($time_stamp));
 		}
+		return array();
 	}
 	
 	/**
@@ -194,8 +195,7 @@ class japaneseDate
 	 */
 	function getOrientalZodiac($time_stamp)
 	{
-		$res = ($this->getYear($time_stamp)+9)%12;
-		return $res;
+        return ($this->getYear($time_stamp)+9)%12;
 	}
 	
 	/**
@@ -209,11 +209,10 @@ class japaneseDate
 		if (mktime(0, 0, 0, 1 , 7, 1989) >= $time_stamp) {
 			//昭和
 			return 0;
-		} else {
-			//平成
-			return 1;
 		}
-	}
+        //平成
+        return 1;
+    }
 
 	/**
 	 * 和暦を返す
@@ -354,15 +353,15 @@ class japaneseDate
 	 * タイムスタンプを展開して、日付の詳細配列を取得する
 	 *
 	 * @param int $time_stamp タイムスタンプ
-	 * @return int タイムスタンプ
+	 * @return array タイムスタンプ
 	 */
 	function makeDateArray($time_stamp)
 	{
 		$res = array(
-			"Year"    => $this->getYear($time_stamp), 
-			"Month"   => $this->getMonth($time_stamp), 
-			"Day"     => $this->getDay($time_stamp),
-			"Weekday" => $this->getWeekday($time_stamp), 
+			'Year'    => $this->getYear($time_stamp),
+			'Month'   => $this->getMonth($time_stamp),
+			'Day'     => $this->getDay($time_stamp),
+			'Weekday' => $this->getWeekday($time_stamp),
 		);
 		
 		$holiday_list = $this->getHolidayList($time_stamp);
@@ -377,7 +376,7 @@ class japaneseDate
 	 */
 	function getWeekday($time_stamp)
 	{
-		return date("w", $time_stamp);
+		return date('w', $time_stamp);
 	}
 
 	/**
@@ -387,7 +386,7 @@ class japaneseDate
 	 */
 	function getYear($time_stamp)
 	{
-		return date("Y", $time_stamp);
+		return date('Y', $time_stamp);
 	}
 
 	/**
@@ -397,7 +396,7 @@ class japaneseDate
 	 */
 	function getMonth($time_stamp)
 	{
-		return date("n", $time_stamp);
+		return date('n', $time_stamp);
 	}
 	
 	/**
@@ -407,7 +406,7 @@ class japaneseDate
 	 */
 	function getDay($time_stamp)
 	{
-		return date("j", $time_stamp);
+		return date('j', $time_stamp);
 	}
 	
 	/**
@@ -417,7 +416,7 @@ class japaneseDate
 	 */
 	function getStrDay($time_stamp)
 	{
-		return date("d", $time_stamp);
+		return date('d', $time_stamp);
 	}
 	
 	/**
@@ -427,7 +426,7 @@ class japaneseDate
 	 */
 	function getSixWeekday($time_stamp)
 	{
-		return (date("j", $time_stamp)+date("m", $time_stamp)) % 6;
+		return (date('j', $time_stamp)+date("m", $time_stamp)) % 6;
 	}
 	
 	/**
@@ -544,7 +543,7 @@ class japaneseDate
 		}
 		if ($year >= 2007) {
 			// [5/3,5/4が日曜]なら、振替休日
-			if (($this->getWeekday(mktime(0, 0, 0, 5, 4, $year)) == JD_SUNDAY) || ($this->getWeekday(mktime(0, 0, 0, 5, 3, $year)) == JD_SUNDAY)) {
+			if ($this->getWeekday(mktime(0, 0, 0, 5, 4, $year)) == JD_SUNDAY || $this->getWeekday(mktime(0, 0, 0, 5, 3, $year)) == JD_SUNDAY) {
 				$res[6] = JD_COMPENSATING_HOLIDAY;
 			}
 		}
@@ -559,7 +558,7 @@ class japaneseDate
 	 */
 	function getJuneHoliday($year)
 	{
-		if ($year == "1993") {
+		if ($year == '1993') {
 			$res[9] = JD_CROWN_PRINCE_NARUHITO_WEDDING;
 		} else {
 			$res = array();
@@ -600,16 +599,16 @@ class japaneseDate
 		
 		$res = array();
 		$i = 0;
-		$year  = date("Y", $time_stamp);
-		$month = date("m", $time_stamp);
-		$day   = date("d", $time_stamp);
+		$year  = date('Y', $time_stamp);
+		$month = date('m', $time_stamp);
+		$day   = date('d', $time_stamp);
 		while (count($res) != $lim_day) {
 			$time_stamp = mktime(0, 0, 0, $month, $day + $i, $year);
 			$gc = $this->purseTime($time_stamp, $luna);
 			if (
-				(array_key_exists($gc["week"], $bypass_week_arr) == false) && 
-				(array_key_exists($gc["time_stamp"], $is_bypass_date) == false) && 
-				($is_bypass_holiday ? $gc["holiday"] == JD_NO_HOLIDAY : true)
+				(array_key_exists($gc['week'], $bypass_week_arr) == false) &&
+				(array_key_exists($gc['time_stamp'], $is_bypass_date) == false) &&
+				($is_bypass_holiday ? $gc['holiday'] == JD_NO_HOLIDAY : true)
 			) {
 				$res[] = $gc;
 			}
@@ -817,28 +816,27 @@ class japaneseDate
 		$time_stamp = mktime(0, 0, 0, $month, $str-1, $year);
 		if ($luna == false) {
 			while ($lim != 0) {
-				$time_stamp = mktime(0, 0, 0, date("m", $time_stamp), date("d", $time_stamp) + 1, date("Y", $time_stamp));
+				$time_stamp = mktime(0, 0, 0, date('m', $time_stamp), date('d', $time_stamp) + 1, date("Y", $time_stamp));
 				$gc = $this->purseTime($time_stamp);
 				$res[] = $gc;
 				$lim--;
 			}
 			return $res;
-		} else {
-			// 期間リスト
-			$time_array = array();
-			while ($lim != 0) {
-				$time_stamp = mktime(0, 0, 0, date("m", $time_stamp), date("d", $time_stamp) + 1, date("Y", $time_stamp));
-				$time_array[] = $time_stamp;
-				$lim--;
-			}
-			// 旧暦
-			$luna_array = $this->getLunaCalendarList($time_array, JD_KEY_TIMESTAMP);
-			foreach ($time_array as $time_stamp) {
-				$gc = $this->purseTime($time_stamp, $luna_array[$time_stamp]);
-				$res[] = $gc;
-			}
 		}
-		return $res;
+        // 期間リスト
+        $time_array = array();
+        while ($lim != 0) {
+            $time_stamp = mktime(0, 0, 0, date('m', $time_stamp), date('d', $time_stamp) + 1, date('Y', $time_stamp));
+            $time_array[] = $time_stamp;
+            $lim--;
+        }
+        // 旧暦
+        $luna_array = $this->getLunaCalendarList($time_array, JD_KEY_TIMESTAMP);
+        foreach ($time_array as $time_stamp) {
+            $gc = $this->purseTime($time_stamp, $luna_array[$time_stamp]);
+            $res[] = $gc;
+        }
+        return $res;
 	}
 	
 	/**
@@ -852,15 +850,15 @@ class japaneseDate
 	{
 		$holiday = $this->getHolidayList($time_stamp);
 
-		$day = date("j", $time_stamp);
+		$day = date('j', $time_stamp);
 		$res = array(
-			"time_stamp" => $time_stamp, 
-			"day"        => $day, 
-			"strday"     => date("d", $time_stamp), 
-			"holiday"    => isset($holiday[$day]) ? $holiday[$day] : JD_NO_HOLIDAY, 
-			"week"       => $this->getWeekday($time_stamp),
-			"month"      => date("m", $time_stamp), 
-			"year"       => date("Y", $time_stamp), 
+			'time_stamp' => $time_stamp,
+			'day'        => $day,
+			'strday'     => date('d', $time_stamp),
+			'holiday'    => isset($holiday[$day]) ? $holiday[$day] : JD_NO_HOLIDAY,
+			'week'       => $this->getWeekday($time_stamp),
+			'month'      => date('m', $time_stamp),
+			'year'       => date('Y', $time_stamp),
 		);
 		
 		if ($luna === true) {
@@ -868,16 +866,16 @@ class japaneseDate
 		}
 		
 		if (is_array($luna)) {
-			$res["sixweek"]      = $this->getSixWeekday($luna["time_stamp"]);
-			$res["luna_sixweek"] = $luna["time_stamp"];
-			$res["is_chuki"]     = $luna["is_chuki"];
-			$res["chuki"]        = $luna["chuki"];
-			$res["tuitachi_jd"]  = $luna["tuitachi_jd"];
-			$res["jd"]           = $luna["jd"];
-			$res["luna_year"]    = $luna["year"];
-			$res["luna_month"]   = $luna["month"];
-			$res["luna_day"]     = $luna["day"];
-			$res["uruu"]         = $luna["uruu"];
+			$res['sixweek']      = $this->getSixWeekday($luna['time_stamp']);
+			$res['luna_sixweek'] = $luna['time_stamp'];
+			$res['is_chuki']     = $luna['is_chuki'];
+			$res['chuki']        = $luna['chuki'];
+			$res['tuitachi_jd']  = $luna['tuitachi_jd'];
+			$res['jd']           = $luna['jd'];
+			$res['luna_year']    = $luna['year'];
+			$res['luna_month']   = $luna['month'];
+			$res['luna_day']     = $luna['day'];
+			$res['uruu']         = $luna['uruu'];
 		}
 		return $res;
 	}
@@ -970,51 +968,52 @@ class japaneseDate
 		$jtime = $this->purseTime($time_stamp, $luna);
 		$OrientalZodiac = $this->getOrientalZodiac($time_stamp);
 		$jd_token = array(
-			"%o" => $OrientalZodiac, 
-			"%O" => $this->viewOrientalZodiac($OrientalZodiac), 
-			"%l" => $jtime["holiday"], 
-			"%L" => $this->viewHoliday($jtime["holiday"]), 
-			"%K" => $this->viewWeekday($jtime["week"]), 
-			"%k" => $luna ? $this->viewSixWeekday($jtime["sixweek"]) : "", 
-			"%6" => $luna ? $jtime["sixweek"] : "", 
-			"%g" => strlen($jtime["day"]) == 1 ? " ".$jtime["day"] : $jtime["day"], 
-			"%J" => $jtime["day"], 
-			"%G" => $this->viewMonth($this->getMonth($time_stamp)), 
-			"%N" => $this->getMonth($time_stamp), 
-			"%F" => $this->viewEraName($this->getEraName($time_stamp)),
-			"%f" => $this->getEraName($time_stamp),
-			"%E" => $this->getEraYear($time_stamp)
+			'%o' => $OrientalZodiac,
+			'%O' => $this->viewOrientalZodiac($OrientalZodiac),
+			'%l' => $jtime['holiday'],
+			'%L' => $this->viewHoliday($jtime['holiday']),
+			'%K' => $this->viewWeekday($jtime['week']),
+			'%k' => $luna ? $this->viewSixWeekday($jtime['sixweek']) : '',
+			'%6' => $luna ? $jtime['sixweek'] : '',
+			'%g' => strlen($jtime['day']) == 1 ? ' '.$jtime['day'] : $jtime['day'],
+			'%J' => $jtime['day'],
+			'%G' => $this->viewMonth($this->getMonth($time_stamp)),
+			'%N' => $this->getMonth($time_stamp),
+			'%F' => $this->viewEraName($this->getEraName($time_stamp)),
+			'%f' => $this->getEraName($time_stamp),
+			'%E' => $this->getEraYear($time_stamp)
 		);
 
-		$resstr = "";
-		$format_array = explode("%", $format);
+		$resstr = '';
+		$format_array = explode('%', $format);
 		$count = count($format_array)-1;
 		$i = 0;
 		while (isset($format_array[$i])) {
-			if (($i == 0 || $i == $count) && $format_array[$i] == "") {
-				$i++;
-				continue;
-			} elseif ($format_array[$i] == "") {
-				$resstr .= "%%";
-				$i++;
-				if (isset($format_array[$i])) {
-					$resstr .= $format_array[$i];
-				}
-				$i++;
-				continue;
-			} else {
-				$token = "%".mb_substr($format_array[$i], 0, 1);
-				if (isset($jd_token[$token])) {
-					$token = $jd_token[$token];
-				}
-				if (mb_strlen($format_array[$i]) > 1) {
-					$token .= mb_substr($format_array[$i], 1);
-				}
-				$resstr .= $token;
-				$i++;
-			}
-		}
+            if (($i == 0 || $i == $count) && $format_array[$i] == '') {
+                $i++;
+                continue;
+            }
+
+            if ($format_array[$i] == '') {
+                $resstr .= '%%';
+                $i++;
+                if (isset($format_array[$i])) {
+                    $resstr .= $format_array[$i];
+                }
+                $i++;
+                continue;
+            }
+
+            $token = '%'.mb_substr($format_array[$i], 0, 1);
+            if (isset($jd_token[$token])) {
+                $token = $jd_token[$token];
+            }
+            if (mb_strlen($format_array[$i]) > 1) {
+                $token .= mb_substr($format_array[$i], 1);
+            }
+            $resstr .= $token;
+            $i++;
+        }
 		return strftime($resstr, $time_stamp);
 	}
 }
-?>
