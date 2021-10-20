@@ -52,8 +52,12 @@ class NP_Calendar extends NucleusPlugin {
         $this->createOption('startsun', NP_CALENDAR_STARTSUN_LABEL, 'yesno', 'yes');
         $this->createOption('special_day', NP_CALENDAR_SPECIAL_DAY, 'textarea', NP_CALENDAR_SPECIAL_DAY_VALUE);
         $this->createOption('include_css', NP_CALENDAR_OUTPUT_CSS, 'yesno', 'yes');
-        $sample_css = file_get_contents($this->getDirectory() . 'sample.css');
-        $this->createOption('css_value', NP_CALENDAR_OUTPUT_CSS_VALUE, 'textarea', $sample_css);
+        $this->createOption(
+            'css_value',
+            NP_CALENDAR_OUTPUT_CSS_VALUE,
+            'textarea',
+            file_get_contents($this->getDirectory() . 'sample.css')
+        );
     }
 
     function init() {
@@ -65,7 +69,9 @@ class NP_Calendar extends NucleusPlugin {
     }
 
     function event_PreSkinParse(&$data) {
-        if ($this->getOption('include_css') !== 'yes') return;
+        if ($this->getOption('include_css') !== 'yes') {
+            return;
+        }
         $contents = &$data['contents'];
         $css  = '<style type="text/css">' . "\n";
         $css .= '<!--' . "\n";
@@ -88,9 +94,13 @@ class NP_Calendar extends NucleusPlugin {
                 $useextlib = false;
         }
 
-        if ($blogName) $b = &$manager->getBlog(getBlogIDFromName($blogName));
-        elseif ($blog) $b = &$blog;
-        else           $b = &$manager->getBlog($CONF['DefaultBlog']);
+        if ($blogName) {
+            $b = &$manager->getBlog(getBlogIDFromName($blogName));
+        } elseif ($blog) {
+            $b = &$blog;
+        } else {
+            $b = &$manager->getBlog($CONF['DefaultBlog']);
+        }
 
         /*
         * select which month to show
@@ -231,7 +241,7 @@ class NP_Calendar extends NucleusPlugin {
         } else {
             $str .= "<caption>\n";
             if ($past) {
-                $str .= '<a href="' . createArchiveLink($blogid, $last_year . '-' . $last_month) . '">' .  "{$prev}</a>\n";
+                $str .= '<a href="' . createArchiveLink($blogid, $last_year . '-' . $last_month) . '">' . $prev . "</a>\n";
             } else {
                 // No link to past
                 $str .= $prev;
